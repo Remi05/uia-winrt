@@ -119,6 +119,7 @@
     <ClInclude Include="AutomationProperty.h">
       <DependentUpon>AutomationProperty.idl</DependentUpon>
     </ClInclude>
+    <ClInclude Include="AutomationTreeWalker.h" />
     <ClInclude Include="ControlType.h">
       <DependentUpon>ControlType.idl</DependentUpon>
     </ClInclude>
@@ -147,6 +148,7 @@
     <ClCompile Include="AutomationProperty.cpp">
       <DependentUpon>AutomationProperty.idl</DependentUpon>
     </ClCompile>
+    <ClCompile Include="AutomationTreeWalker.cpp" />
     <ClCompile Include="ControlType.cpp">
       <DependentUpon>ControlType.idl</DependentUpon>
     </ClCompile>
@@ -169,6 +171,7 @@
     <Midl Include="AutomationEnums.idl" />
     <Midl Include="AutomationPattern.idl" />
     <Midl Include="AutomationProperty.idl" />
+    <Midl Include="AutomationTreeWalker.idl" />
     <Midl Include="ControlType.idl" />
   </ItemGroup>
   <ItemGroup>

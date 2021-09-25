@@ -1,0 +1,25 @@
+import "AutomationCacheRequest.idl";
+import "AutomationConditions.idl";
+import "AutomationElement.idl";
+
+namespace uia
+{
+    [default_interface]
+    runtimeclass AutomationTreeWalker
+    {
+        AutomationCondition Condition{ get; };
+
+        AutomationElement GetFirstChildElement(AutomationElement element);
+        AutomationElement GetFirstChildElementBuildCache(AutomationElement element, AutomationCacheRequest cacheRequest);
+        AutomationElement GetLastChildElement(AutomationElement element);
+        AutomationElement GetLastChildElementBuildCache(AutomationElement element, AutomationCacheRequest cacheRequest):
+        AutomationElement GetNextSiblingElement(AutomationElement element);
+        AutomationElement GetNextSiblingElementBuildCache(AutomationElement element, AutomationCacheRequest cacheRequest);
+        AutomationElement GetParentElement(AutomationElement element);
+        AutomationElement GetParentElementBuildCache(AutomationElement element, AutomationCacheRequest cacheRequest);
+        AutomationElement GetPreviousSiblingElement(AutomationElement element);
+        AutomationElement GetPreviousSiblingElementBuildCache(AutomationElement element, AutomationCacheRequest cacheRequest);
+        AutomationElement NormalizeElement(AutomationElement element);
+        AutomationElement NormalizeElementBuildCache(AutomationElement element, AutomationCacheRequest cacheRequest);
+    }
+}
