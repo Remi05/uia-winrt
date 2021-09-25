@@ -153,8 +153,19 @@ namespace winrt::uia::implementation
 		return winrt::make<implementation::AutomationElement>(uiAutomationElement);
 	}
 
-	//Automation::GetPatternProgrammaticName();
-	//Automation::GetPropertyProgrammaticName();
+	hstring Automation::GetPatternProgrammaticName(uia::AutomationPattern pattern)
+	{
+		BSTR patternName;
+		check_hresult(m_uiAutomation->GetPatternProgrammaticName(pattern.Id(), &patternName));
+		return hstring{ std::move(patternName) };
+	}
+
+	hstring Automation::GetPropertyProgrammaticName(uia::AutomationProperty property)
+	{
+		BSTR propertyName;
+		check_hresult(m_uiAutomation->GetPatternProgrammaticName(property.Id(), &propertyName));
+		return hstring{ std::move(propertyName) };
+	}
 
 	uia::AutomationElement Automation::GetRootElement()
 	{

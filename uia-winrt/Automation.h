@@ -51,8 +51,8 @@ namespace winrt::uia::implementation
         uia::AutomationElement ElementFromPointBuildCache(Windows::Foundation::Point const& point, uia::AutomationCacheRequest const& cacheRequest);
         uia::AutomationElement GetFocusedElement();
         uia::AutomationElement GetFocusedElementBuildCache(uia::AutomationCacheRequest const& cacheRequest);
-        //GetPatternProgrammaticName();
-        //GetPropertyProgrammaticName();
+        hstring GetPatternProgrammaticName(uia::AutomationPattern pattern);
+        hstring GetPropertyProgrammaticName(uia::AutomationProperty property);
         uia::AutomationElement GetRootElement();
         uia::AutomationElement GetRootElementBuildCache(uia::AutomationCacheRequest const& cacheRequest);
 

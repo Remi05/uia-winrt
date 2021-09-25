@@ -1,6 +1,8 @@
 import "AutomationCacheRequest.idl";
 import "AutomationConditions.idl";
 import "AutomationElement.idl";
+import "AutomationPattern.idl";
+import "AutomationProperty.idl";
 
 namespace uia
 {
@@ -54,8 +56,8 @@ namespace uia
         AutomationElement ElementFromPointBuildCache(Windows.Foundation.Point point, AutomationCacheRequest cacheRequest);
         AutomationElement GetFocusedElement();
         AutomationElement GetFocusedElementBuildCache(AutomationCacheRequest cacheRequest);
-        //GetPatternProgrammaticName();
-        //GetPropertyProgrammaticName();
+        String GetPatternProgrammaticName(AutomationPattern pattern);
+        String GetPropertyProgrammaticName(AutomationProperty property);
         AutomationElement GetRootElement();
         AutomationElement GetRootElementBuildCache(AutomationCacheRequest cacheRequest);
 
