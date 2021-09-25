@@ -3,6 +3,7 @@ import "AutomationConditions.idl";
 import "AutomationElement.idl";
 import "AutomationPattern.idl";
 import "AutomationProperty.idl";
+import "AutomationTreeWalker.idl";
 
 namespace uia
 {
@@ -14,12 +15,12 @@ namespace uia
         // ====== IUIAutomation ======
 
         AutomationCondition ContentViewCondition{ get; };
-        //ContentViewWalker{ get; };
+        AutomationTreeWalker ContentViewWalker{ get; };
         AutomationCondition ControlViewCondition{ get; };
-        //ControlViewWalker{ get; };
+        AutomationTreeWalker ControlViewWalker{ get; };
         //ProxyFactoryMapping{ get; };
         AutomationCondition RawViewCondition{ get; };
-        //RawViewWalker{ get; };
+        AutomationTreeWalker RawViewWalker{ get; };
         //ReservedMixedAttributeValue{ get; };
         //ReservedNotSupportedValue{ get; };
 

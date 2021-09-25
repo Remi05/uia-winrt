@@ -9,12 +9,12 @@ namespace winrt::uia::implementation
         Automation();
 
         uia::AutomationCondition ContentViewCondition();
-        //ContentViewWalker();
+        uia::AutomationTreeWalker ContentViewWalker();
         uia::AutomationCondition ControlViewCondition();
-        //ControlViewWalker();
+        uia::AutomationTreeWalker ControlViewWalker();
         //ProxyFactoryMapping();
         uia::AutomationCondition RawViewCondition();
-        //RawViewWalker();
+        uia::AutomationTreeWalker RawViewWalker();
         //ReservedMixedAttributeValue();
         //ReservedNotSupportedValue();
 

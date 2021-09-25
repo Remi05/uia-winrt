@@ -7,6 +7,7 @@
 #include "AutomationCacheRequest.h"
 #include "AutomationCondition.h"
 #include "AutomationElement.h"
+#include "AutomationTreeWalker.h"
 
 namespace winrt::uia::implementation
 {
@@ -24,7 +25,12 @@ namespace winrt::uia::implementation
 		return winrt::make<implementation::AutomationCondition>(contentViewCondition);
 	}
 
-	//Automation::ContentViewWalker();
+	uia::AutomationTreeWalker Automation::ContentViewWalker()
+	{
+		com_ptr<IUIAutomationTreeWalker> contentViewWalker;
+		check_hresult(m_uiAutomation->get_ContentViewWalker(contentViewWalker.put()));
+		return winrt::make<implementation::AutomationTreeWalker>(contentViewWalker);
+	}
 
 	uia::AutomationCondition Automation::ControlViewCondition()
 	{
@@ -33,7 +39,13 @@ namespace winrt::uia::implementation
 		return winrt::make<implementation::AutomationCondition>(controlViewCondition);
 	}
 
-	//Automation::ControlViewWalker();
+	uia::AutomationTreeWalker Automation::ControlViewWalker()
+	{
+		com_ptr<IUIAutomationTreeWalker> controlViewWalker;
+		check_hresult(m_uiAutomation->get_ControlViewWalker(controlViewWalker.put()));
+		return winrt::make<implementation::AutomationTreeWalker>(controlViewWalker);
+	}
+
 	//Automation::ProxyFactoryMapping();
 
 	uia::AutomationCondition Automation::RawViewCondition()
@@ -43,7 +55,13 @@ namespace winrt::uia::implementation
 		return winrt::make<implementation::AutomationCondition>(rawViewCondition);
 	}
 
-	//Automation::RawViewWalker();
+	uia::AutomationTreeWalker Automation::RawViewWalker()
+	{
+		com_ptr<IUIAutomationTreeWalker> rawViewWalker;
+		check_hresult(m_uiAutomation->get_RawViewWalker(rawViewWalker.put()));
+		return winrt::make<implementation::AutomationTreeWalker>(rawViewWalker);
+	}
+
 	//Automation::ReservedMixedAttributeValue();
 	//Automation::ReservedNotSupportedValue();
 

@@ -12,7 +12,7 @@ namespace uia
         AutomationElement GetFirstChildElement(AutomationElement element);
         AutomationElement GetFirstChildElementBuildCache(AutomationElement element, AutomationCacheRequest cacheRequest);
         AutomationElement GetLastChildElement(AutomationElement element);
-        AutomationElement GetLastChildElementBuildCache(AutomationElement element, AutomationCacheRequest cacheRequest):
+        AutomationElement GetLastChildElementBuildCache(AutomationElement element, AutomationCacheRequest cacheRequest);
         AutomationElement GetNextSiblingElement(AutomationElement element);
         AutomationElement GetNextSiblingElementBuildCache(AutomationElement element, AutomationCacheRequest cacheRequest);
         AutomationElement GetParentElement(AutomationElement element);
