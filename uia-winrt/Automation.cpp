@@ -84,7 +84,6 @@ namespace winrt::uia::implementation
 
 	//bool Automation::CompareRuntimeIds();
 
-
 	uia::AutomationCondition Automation::CreateAndCondition(uia::AutomationCondition const& condition1, uia::AutomationCondition const& condition2)
 	{
 		com_ptr<IUIAutomationCondition> uiAutomationCondition1 = winrt::get_self<implementation::AutomationCondition>(condition1)->UiAutomationCondition();
@@ -96,7 +95,13 @@ namespace winrt::uia::implementation
 
 	//uia::AutomationCondition Automation::CreateAndConditionFromArray();
 	//uia::AutomationCondition Automation::CreateAndConditionFromNativeArray();
-	//uia::AutomationCacheRequest Automation::CreateCacheRequest();
+
+	uia::AutomationCacheRequest Automation::CreateCacheRequest()
+	{
+		com_ptr<IUIAutomationCacheRequest> uiAutomationCacheRequest;
+		check_hresult(m_uiAutomation->CreateCacheRequest(uiAutomationCacheRequest.put()));
+		return winrt::make<AutomationCacheRequest>(uiAutomationCacheRequest);
+	}
 
 	uia::AutomationCondition Automation::CreateFalseCondition()
 	{

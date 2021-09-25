@@ -37,7 +37,7 @@ namespace uia
         AutomationCondition CreateAndCondition(AutomationCondition condition1, AutomationCondition condition2);
         //AutomationCondition CreateAndConditionFromArray();
         //AutomationCondition CreateAndConditionFromNativeArray();
-        //AutomationCacheRequest CreateCacheRequest();
+        AutomationCacheRequest CreateCacheRequest();
         AutomationCondition CreateFalseCondition();
         AutomationCondition CreateNotCondition(AutomationCondition condition);
         AutomationCondition CreateOrCondition(AutomationCondition condition1, AutomationCondition condition2);

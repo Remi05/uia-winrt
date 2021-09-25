@@ -31,7 +31,7 @@ namespace winrt::uia::implementation
         uia::AutomationCondition CreateAndCondition(uia::AutomationCondition const& condition1, uia::AutomationCondition const& condition2);
         //uia::AutomationCondition CreateAndConditionFromArray();
         //uia::AutomationCondition CreateAndConditionFromNativeArray();
-        //CacheRequest CreateCacheRequest();
+        uia::AutomationCacheRequest CreateCacheRequest();
         uia::AutomationCondition CreateFalseCondition();
         uia::AutomationCondition CreateNotCondition(uia::AutomationCondition const& condition);
         uia::AutomationCondition CreateOrCondition(uia::AutomationCondition const& condition1, uia::AutomationCondition const& condition2);
