@@ -77,4 +77,28 @@ namespace winrt::uia
 			return uia::AutomationTreeScope::None;
 		}
 	}
+
+	AutomationElementMode ElementModeToAutomationElementMode(uia::ElementMode elementMode)
+	{
+		switch (elementMode)
+		{
+		case uia::ElementMode::Full:
+			return AutomationElementMode_Full;
+		case uia::ElementMode::None:
+		default:
+			return AutomationElementMode_None;
+		}
+	}
+
+	uia::ElementMode AutomationElementModeToElementMode(AutomationElementMode automationElementMode)
+	{
+		switch (automationElementMode)
+		{
+		case AutomationElementMode_Full:
+			return uia::ElementMode::Full;
+		case AutomationElementMode_None:
+		default:
+			return uia::ElementMode::None;
+		}
+	}
 }

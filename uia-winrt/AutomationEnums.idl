@@ -6,12 +6,6 @@ namespace uia
         Assertive
     };
 
-    enum Orientation {
-        None,
-        Horizontal,
-        Vertical
-    };
-
     enum AutomationTreeScope {
         None,
         Element,
@@ -20,5 +14,16 @@ namespace uia
         Parent,
         Ancestors,
         Subtree
+    };
+
+    enum ElementMode {
+        None, 
+        Full
+    };
+
+    enum Orientation {
+        None,
+        Horizontal,
+        Vertical
     };
 }
