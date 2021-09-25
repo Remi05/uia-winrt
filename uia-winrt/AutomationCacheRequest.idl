@@ -1,17 +1,19 @@
 import "AutomationConditions.idl";
 import "AutomationEnums.idl";
+import "AutomationPattern.idl";
+import "AutomationProperty.idl";
 
 namespace uia
 {
     [default_interface]
     runtimeclass AutomationCacheRequest
     {
-        //AutomationElementMode{ get; set; };
+        ElementMode Mode{ get; set; };
         AutomationCondition TreeFilter{ get; set; };
         AutomationTreeScope Scope{ get; set; };
 
-        //void AddPattern();
-        //void AddProperty();
+        void AddPattern(AutomationPattern pattern);
+        void AddProperty(AutomationProperty property);
         AutomationCacheRequest Clone();
     }
 }

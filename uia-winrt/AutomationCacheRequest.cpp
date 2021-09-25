@@ -9,7 +9,18 @@
 
 namespace winrt::uia::implementation
 {
-    //AutomationElementMode{ get; set; };
+    uia::ElementMode AutomationCacheRequest::Mode()
+    {
+        AutomationElementMode automationElementMode;
+        check_hresult(m_uiAutomationCacheRequest->get_AutomationElementMode(&automationElementMode));
+        return AutomationElementModeToElementMode(automationElementMode);
+    }
+
+    void AutomationCacheRequest::Mode(uia::ElementMode elementMode)
+    {
+        AutomationElementMode automationElementMode = ElementModeToAutomationElementMode(elementMode);
+        check_hresult(m_uiAutomationCacheRequest->put_AutomationElementMode(automationElementMode));
+    }
 
     uia::AutomationCondition AutomationCacheRequest::TreeFilter()
     {
@@ -37,8 +48,15 @@ namespace winrt::uia::implementation
         check_hresult(m_uiAutomationCacheRequest->put_TreeScope(scope));
     }
 
-    //void AddPattern();
-    //void AddProperty();
+    void AutomationCacheRequest::AddPattern(uia::AutomationPattern const& pattern)
+    {
+        check_hresult(m_uiAutomationCacheRequest->AddPattern(pattern.Id()));
+    }
+
+    void AutomationCacheRequest::AddProperty(uia::AutomationProperty const& property)
+    {
+        check_hresult(m_uiAutomationCacheRequest->AddProperty(property.Id()));
+    }
 
     uia::AutomationCacheRequest AutomationCacheRequest::Clone()
     {

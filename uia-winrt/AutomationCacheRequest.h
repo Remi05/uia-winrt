@@ -11,15 +11,17 @@ namespace winrt::uia::implementation
 
         com_ptr<IUIAutomationCacheRequest> UiAutomationCacheRequest() const noexcept { return m_uiAutomationCacheRequest; }
 
-        //AutomationElementMode{ get; set; };
+        uia::ElementMode Mode();
+        void Mode(uia::ElementMode elementMode);
+
         uia::AutomationCondition TreeFilter();
         void TreeFilter(uia::AutomationCondition const& condition);
 
         uia::AutomationTreeScope Scope();
         void Scope(uia::AutomationTreeScope const& treeScope);
 
-        //void AddPattern();
-        //void AddProperty();
+        void AddPattern(uia::AutomationPattern const& pattern);
+        void AddProperty(uia::AutomationProperty const& property);
         uia::AutomationCacheRequest Clone();
 
     private:
