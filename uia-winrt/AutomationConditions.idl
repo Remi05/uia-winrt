@@ -1,5 +1,3 @@
-//import "AutomationElement.idl";
-//
 namespace uia
 {
     [default_interface]

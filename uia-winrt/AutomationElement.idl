@@ -84,15 +84,15 @@ namespace uia
         AutomationElement FindFirstBuildCache(AutomationTreeScope treeScope, AutomationCondition condition, AutomationCacheRequest cacheRequest);
         AutomationElementArray GetCachedChildren();
         AutomationElement GetCachedParent();
-        //GetCachedPattern();
-        //GetCachedPatternAs();
-        //GetCachedPropertyValue();
-        //GetCachedPropertyValueEx();
+        //IInspectable GetCachedPattern(AutomationPattern pattern);
+        //GetCachedPatternAs(AutomationPattern pattern);
+        //IInspectable GetCachedPropertyValue(AutomationProperty property);
+        //GetCachedPropertyValueEx(AutomationProperty property);
         //Boolean TryGetClickablePoint(Windows.Foundation.Point point);
-        //GetCurrentPattern();
-        //GetCurrentPatternAs();
-        //GetCurrentPropertyValue();
-        //GetCurrentPropertyValueEx();
+        //IInspectable GetCurrentPattern(AutomationPattern pattern);
+        //GetCurrentPatternAs(AutomationPattern pattern);
+        //IInspectable GetCurrentPropertyValue(AutomationProperty property);
+        //GetCurrentPropertyValueEx(AutomationProperty property);
         //GetRuntimeId();
 
         void SetFocus();
@@ -116,6 +116,7 @@ namespace uia
 
 
         // ====== IUIAutomationElement4 ======
+
         //CachedAnnotationObjects{ get; };
         //CachedAnnotationTypes{ get; };
         //CachedLevel{ get; };
