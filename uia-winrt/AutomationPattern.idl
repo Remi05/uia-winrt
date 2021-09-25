@@ -1,0 +1,43 @@
+namespace uia
+{
+    [default_interface]
+    runtimeclass AutomationPattern
+    {
+        Int32 Id{ get; };
+
+        static AutomationPattern LookupById(Int32 patternId);
+
+        static AutomationPattern Annotation{ get; };
+        static AutomationPattern CustomNavigation{ get; };
+        static AutomationPattern Dock{ get; };
+        static AutomationPattern Drag{ get; };
+        static AutomationPattern DropTarget{ get; };
+        static AutomationPattern ExpandCollapse{ get; };
+        static AutomationPattern GridItem{ get; };
+        static AutomationPattern Grid{ get; };
+        static AutomationPattern Invoke{ get; };
+        static AutomationPattern ItemContainer{ get; };
+        static AutomationPattern LegacyIAccessible{ get; };
+        static AutomationPattern MultipleView{ get; };
+        static AutomationPattern ObjectModel{ get; };
+        static AutomationPattern RangeValue{ get; };
+        static AutomationPattern ScrollItem{ get; };
+        static AutomationPattern Scroll{ get; };
+        static AutomationPattern SelectionItem{ get; };
+        static AutomationPattern Selection{ get; };
+        static AutomationPattern Spreadsheet{ get; };
+        static AutomationPattern SpreadsheetItem{ get; };
+        static AutomationPattern Styles{ get; };
+        static AutomationPattern SynchronizedInput{ get; };
+        static AutomationPattern TableItem{ get; };
+        static AutomationPattern Table{ get; };
+        static AutomationPattern TextChild{ get; };
+        static AutomationPattern TextEdit{ get; };
+        static AutomationPattern Text{ get; };
+        static AutomationPattern Toggle{ get; };
+        static AutomationPattern Transform{ get; };
+        static AutomationPattern Value{ get; };
+        static AutomationPattern VirtualizedItem{ get; };
+        static AutomationPattern Window{ get; };
+    }
+}

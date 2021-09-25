@@ -1,0 +1,52 @@
+namespace uia
+{
+    [default_interface]
+    runtimeclass ControlType
+    {
+        Int32 Id{ get; };
+
+        static ControlType LookupById(Int32 controlTypeId);
+
+        static ControlType AppBar{ get; };
+        static ControlType Button{ get; };
+        static ControlType Calendar{ get; };
+        static ControlType CheckBox{ get; };
+        static ControlType ComboBox{ get; };
+        static ControlType Custom{ get; };
+        static ControlType DataGrid{ get; };
+        static ControlType DataItem{ get; };
+        static ControlType Document{ get; };
+        static ControlType Edit{ get; };
+        static ControlType Group{ get; };
+        static ControlType Header{ get; };
+        static ControlType HeaderItem{ get; };
+        static ControlType Hyperlink{ get; };
+        static ControlType Image{ get; };
+        static ControlType List{ get; };
+        static ControlType ListItem{ get; };
+        static ControlType MenuBar{ get; };
+        static ControlType Menu{ get; };
+        static ControlType MenuItem{ get; };
+        static ControlType Pane{ get; };
+        static ControlType ProgressBar{ get; };
+        static ControlType RadioButton{ get; };
+        static ControlType ScrollBar{ get; };
+        static ControlType SemanticZoom{ get; };
+        static ControlType Separator{ get; };
+        static ControlType Slider{ get; };
+        static ControlType Spinner{ get; };
+        static ControlType SplitButton{ get; };
+        static ControlType StatusBar{ get; };
+        static ControlType Tab{ get; };
+        static ControlType TabItem{ get; };
+        static ControlType Table{ get; };
+        static ControlType Text{ get; };
+        static ControlType Thumb{ get; };
+        static ControlType TitleBar{ get; };
+        static ControlType ToolBar{ get; };
+        static ControlType ToolTip{ get; };
+        static ControlType Tree{ get; };
+        static ControlType TreeItem{ get; };
+        static ControlType Window{ get; };
+    }
+}

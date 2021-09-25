@@ -1,0 +1,24 @@
+namespace uia
+{
+    enum AutomationLiveSetting {
+        Off,
+        Polite,
+        Assertive
+    };
+
+    enum Orientation {
+        None,
+        Horizontal,
+        Vertical
+    };
+
+    enum AutomationTreeScope {
+        None,
+        Element,
+        Children,
+        Descendants,
+        Parent,
+        Ancestors,
+        Subtree
+    };
+}

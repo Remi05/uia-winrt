@@ -1,0 +1,52 @@
+namespace uia
+{
+    [default_interface]
+    runtimeclass AutomationProperty
+    {
+        Int32 Id{ get; };
+
+        static AutomationProperty LookupById(Int32 propertyId);
+
+        //static AutomationProperty AppBar{ get; };
+        //static AutomationProperty Button{ get; };
+        //static AutomationProperty Calendar{ get; };
+        //static AutomationProperty CheckBox{ get; };
+        //static AutomationProperty ComboBox{ get; };
+        //static AutomationProperty Custom{ get; };
+        //static AutomationProperty DataGrid{ get; };
+        //static AutomationProperty DataItem{ get; };
+        //static AutomationProperty Document{ get; };
+        //static AutomationProperty Edit{ get; };
+        //static AutomationProperty Group{ get; };
+        //static AutomationProperty Header{ get; };
+        //static AutomationProperty HeaderItem{ get; };
+        //static AutomationProperty Hyperlink{ get; };
+        //static AutomationProperty Image{ get; };
+        //static AutomationProperty List{ get; };
+        //static AutomationProperty ListItem{ get; };
+        //static AutomationProperty MenuBar{ get; };
+        //static AutomationProperty Menu{ get; };
+        //static AutomationProperty MenuItem{ get; };
+        //static AutomationProperty Pane{ get; };
+        //static AutomationProperty ProgressBar{ get; };
+        //static AutomationProperty RadioButton{ get; };
+        //static AutomationProperty ScrollBar{ get; };
+        //static AutomationProperty SemanticZoom{ get; };
+        //static AutomationProperty Separator{ get; };
+        //static AutomationProperty Slider{ get; };
+        //static AutomationProperty Spinner{ get; };
+        //static AutomationProperty SplitButton{ get; };
+        //static AutomationProperty StatusBar{ get; };
+        //static AutomationProperty Tab{ get; };
+        //static AutomationProperty TabItem{ get; };
+        //static AutomationProperty Table{ get; };
+        //static AutomationProperty Text{ get; };
+        //static AutomationProperty Thumb{ get; };
+        //static AutomationProperty TitleBar{ get; };
+        //static AutomationProperty ToolBar{ get; };
+        //static AutomationProperty ToolTip{ get; };
+        //static AutomationProperty Tree{ get; };
+        //static AutomationProperty TreeItem{ get; };
+        //static AutomationProperty Window{ get; };
+    }
+}

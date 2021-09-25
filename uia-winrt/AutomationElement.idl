@@ -1,0 +1,173 @@
+import "AutomationCacheRequest.idl";
+import "AutomationConditions.idl";
+import "AutomationEnums.idl";
+import "ControlType.idl";
+
+namespace uia
+{
+    [default_interface]
+    runtimeclass AutomationElement 
+    {
+        // ======= IUIAutomationElement =======
+
+        String CachedAcceleratorKey{ get; };
+        String CachedAccessKey{ get; };
+        String CachedAriaProperties{ get; };
+        String CachedAriaRole{ get; };
+        String CachedAutomationId{ get; };
+        Windows.Foundation.Rect CachedBoundingRectangle{ get; };
+        String CachedClassName{ get; };
+        AutomationElementArray CachedControllerFor{ get; };
+        ControlType CachedControlType{ get; };
+        Int32 CachedCulture{ get; };
+        AutomationElementArray CachedDescribedBy{ get; };
+        AutomationElementArray CachedFlowsTo{ get; };
+        String CachedFrameworkId{ get; };
+        Boolean CachedHasKeyboardFocus{ get; };
+        String CachedHelpText{ get; };
+        Boolean CachedIsContentElement{ get; };
+        Boolean CachedIsControlElement{ get; };
+        Boolean CachedIsDataValidForForm{ get; };
+        Boolean CachedIsEnabled{ get; };
+        Boolean CachedIsKeyboardFocusable{ get; };
+        Boolean CachedIsOffscreen{ get; };
+        Boolean CachedIsPassword{ get; };
+        Boolean CachedIsRequiredForForm{ get; };
+        String CachedItemStatus{ get; };
+        String CachedItemType{ get; };
+        AutomationElement CachedLabeledBy{ get; };
+        String CachedLocalizedControlType{ get; };
+        String CachedName{ get; };
+        //CachedNativeWindowHandle{ get; };
+        Orientation CachedOrientation{ get; };
+        Int32 CachedProcessId{ get; };
+        String CachedProviderDescription{ get; };
+
+
+        String CurrentAcceleratorKey{ get; };
+        String CurrentAccessKey{ get; };
+        String CurrentAriaProperties{ get; };
+        String CurrentAriaRole{ get; };
+        String CurrentAutomationId{ get; };
+        Windows.Foundation.Rect CurrentBoundingRectangle{ get; };
+        String CurrentClassName{ get; };
+        AutomationElementArray CurrentControllerFor{ get; };
+        ControlType CurrentControlType{ get; };
+        Int32 CurrentCulture{ get; };
+        AutomationElementArray CurrentDescribedBy{ get; };
+        AutomationElementArray CurrentFlowsTo{ get; };
+        String CurrentFrameworkId{ get; };
+        Boolean CurrentHasKeyboardFocus{ get; };
+        String CurrentHelpText{ get; };
+        Boolean CurrentIsContentElement{ get; };
+        Boolean CurrentIsControlElement{ get; };
+        Boolean CurrentIsDataValidForForm{ get; };
+        Boolean CurrentIsEnabled{ get; };
+        Boolean CurrentIsKeyboardFocusable{ get; };
+        Boolean CurrentIsOffscreen{ get; };
+        Boolean CurrentIsPassword{ get; };
+        Boolean CurrentIsRequiredForForm{ get; };
+        String CurrentItemStatus{ get; };
+        String CurrentItemType{ get; };
+        AutomationElement CurrentLabeledBy{ get; };
+        String CurrentLocalizedControlType{ get; };
+        String CurrentName{ get; };
+        //CurrentNativeWindowHandle{ get; };
+        Orientation CurrentOrientation{ get; };
+        Int32 CurrentProcessId{ get; };
+        String CurrentProviderDescription{ get; };
+
+        AutomationElement BuildUpdatedCache(AutomationCacheRequest cacheRequest);
+        AutomationElementArray FindAll(AutomationTreeScope treeScope, AutomationCondition condition);
+        AutomationElementArray FindAllBuildCache(AutomationTreeScope treeScope, AutomationCondition condition, AutomationCacheRequest cacheRequest);
+        AutomationElement FindFirst(AutomationTreeScope treeScope, AutomationCondition condition);
+        AutomationElement FindFirstBuildCache(AutomationTreeScope treeScope, AutomationCondition condition, AutomationCacheRequest cacheRequest);
+        AutomationElementArray GetCachedChildren();
+        AutomationElement GetCachedParent();
+        //GetCachedPattern();
+        //GetCachedPatternAs();
+        //GetCachedPropertyValue();
+        //GetCachedPropertyValueEx();
+        //Boolean TryGetClickablePoint(Windows.Foundation.Point point);
+        //GetCurrentPattern();
+        //GetCurrentPatternAs();
+        //GetCurrentPropertyValue();
+        //GetCurrentPropertyValueEx();
+        //GetRuntimeId();
+
+        void SetFocus();
+
+
+        // ====== IUIAutomationElement2 ======
+
+        //AutomationElementArray CachedFlowsFrom{ get; };
+        //AutomationLiveSetting CachedLiveSetting{ get; };
+        //Boolean CachedOptimizeForVisualContent{ get; };
+        //AutomationElementArray CurrentFlowsFrom{ get; };
+        //AutomationLiveSetting CurrentLiveSetting{ get; };
+        //Boolean CurrentOptimizeForVisualContent{ get; };
+
+
+        // ====== IUIAutomationElement3 ======
+
+        //Boolean CachedIsPeripheral{ get; };
+        //Boolean CurrentIsPeripheral{ get; };
+        //void ShowContextMenu();
+
+
+        // ====== IUIAutomationElement4 ======
+        //CachedAnnotationObjects{ get; };
+        //CachedAnnotationTypes{ get; };
+        //CachedLevel{ get; };
+        //CachedPositionInSet{ get; };
+        //CachedSizeOfSet{ get; };
+        //CurrentAnnotationObjects{ get; };
+        //CurrentAnnotationTypes{ get; };
+        //CurrentLevel{ get; };
+        //CurrentPositionInSet{ get; };
+        //CurrentSizeOfSet{ get; };
+
+
+        // ====== IUIAutomationElement5 ======
+
+        //CachedLandmarkType{ get; };
+        //String CachedLocalizedLandmarkType{ get; };
+        //CurrentLandmarkType{ get; };
+        //String CurrentLocalizedLandmarkType{ get; };
+
+
+        // ====== IUIAutomationElement6 ======
+
+        //String CachedFullDescription{ get; };
+        //String CurrentFullDescription{ get; };
+
+
+        // ====== IUIAutomationElement7 ======
+
+        //AutomationElementArray FindAllWithOptions();
+        //AutomationElementArray FindAllWithOptionsBuildCache();
+        //AutomationElement FindFirstWithOptions();
+        //AutomationElement FindFirstWithOptionsBuildCache();
+        //GetCurrentMetadataValue();
+
+
+        // ====== IUIAutomationElement8 ======
+
+        //CachedHeadingLevel{ get; };
+        //CurrentHeadingLevel{ get; };
+
+
+        // ====== IUIAutomationElement9 ======
+
+        //Boolean CachedIsDialog{ get; };
+        //Boolean CurrentIsDialog{ get; };
+    }
+
+    [default_interface]
+    runtimeclass AutomationElementArray
+    {
+        Int32 Length{ get; };
+
+        AutomationElement GetElement(Int32 index);
+    }
+}

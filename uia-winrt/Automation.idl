@@ -1,0 +1,114 @@
+import "AutomationCacheRequest.idl";
+import "AutomationConditions.idl";
+import "AutomationElement.idl";
+
+namespace uia
+{
+    [default_interface]
+    runtimeclass Automation
+    {
+        Automation();
+
+        // ====== IUIAutomation ======
+
+        AutomationCondition ContentViewCondition{ get; };
+        //ContentViewWalker{ get; };
+        AutomationCondition ControlViewCondition{ get; };
+        //ControlViewWalker{ get; };
+        //ProxyFactoryMapping{ get; };
+        AutomationCondition RawViewCondition{ get; };
+        //RawViewWalker{ get; };
+        //ReservedMixedAttributeValue{ get; };
+        //ReservedNotSupportedValue{ get; };
+
+        //AddAutomationEventHandler();
+        //AddFocusChangedEventHandler();
+        //AddPropertyChangedEventHandler();
+        //AddPropertyChangedEventHandlerNativeArray();
+        //AddStructureChangedEventHandler();
+
+        //CheckNotSupported();
+        Boolean CompareElements(AutomationElement el1, AutomationElement el2);
+        //Boolean CompareRuntimeIds();
+
+        AutomationCondition CreateAndCondition(AutomationCondition condition1, AutomationCondition condition2);
+        //AutomationCondition CreateAndConditionFromArray();
+        //AutomationCondition CreateAndConditionFromNativeArray();
+        //AutomationCacheRequest CreateCacheRequest();
+        AutomationCondition CreateFalseCondition();
+        AutomationCondition CreateNotCondition(AutomationCondition condition);
+        AutomationCondition CreateOrCondition(AutomationCondition condition1, AutomationCondition condition2);
+        //AutomationCondition CreateOrConditionFromArray();
+        //AutomationCondition CreateOrConditionFromNativeArray();
+        //AutomationCondition CreatePropertyCondition();
+        //AutomationCondition CreatePropertyConditionEx();
+
+        //CreateProxyFactoryEntry();
+        //CreateTreeWalker();
+        AutomationCondition CreateTrueCondition();
+        //AutomationElement ElementFromHandle();
+        //AutomationElement ElementFromHandleBuildCache();
+        //AutomationElement ElementFromIAccessible();
+        //AutomationElement ElementFromIAccessibleBuildCache();
+        AutomationElement ElementFromPoint(Windows.Foundation.Point point);
+        AutomationElement ElementFromPointBuildCache(Windows.Foundation.Point point, AutomationCacheRequest cacheRequest);
+        AutomationElement GetFocusedElement();
+        AutomationElement GetFocusedElementBuildCache(AutomationCacheRequest cacheRequest);
+        //GetPatternProgrammaticName();
+        //GetPropertyProgrammaticName();
+        AutomationElement GetRootElement();
+        AutomationElement GetRootElementBuildCache(AutomationCacheRequest cacheRequest);
+
+        //IntNativeArrayToSafeArray();
+        //IntSafeArrayToNativeArray();
+        //PollForPotentialSupportedPatterns();
+        //PollForPotentialSupportedProperties();
+        //RectToVariant();
+
+        void RemoveAllEventHandlers();
+        //RemoveAutomationEventHandler();
+        //RemoveFocusChangedEventHandler();
+        //RemovePropertyChangedEventHandler();
+        //RemoveStructureChangedEventHandler();
+
+        //SafeArrayToRectNativeArray();
+        //VariantToRect();
+
+
+        // ====== IUIAutomation2 ======
+
+        //Boolean AutoSetFocus{ get; set; };
+        //Int64 ConnectionTimeout{ get; set; };
+        //Int64 TransactionTimeout{ get; set; };
+
+
+        // ====== IUIAutomation3 ======
+
+        //AddTextEditTextChangedEventHandler();
+        //RemoveTextEditTextChangedEventHandler();
+
+
+        // ====== IUIAutomation4 ======
+
+        //AddChangesEventHandler();
+        //RemoveChangesEventHandler();
+
+
+        // ====== IUIAutomation5 ======
+
+        //AddNotificationEventHandler();
+        //RemoveNotificationEventHandler();
+
+
+         // ====== IUIAutomation6 ======
+
+        //CoalesceEvents{ get; set; };
+        //ConnectionRecoveryBehavior{ get; set; };
+
+        //AddActiveTextPositionChangedEventHandler();
+        //AddEventHandlerGroup();
+        //CreateEventHandlerGroup();
+        //RemoveActiveTextPositionChangedEventHandler();
+        //RemoveEventHandlerGroup();
+    }
+}

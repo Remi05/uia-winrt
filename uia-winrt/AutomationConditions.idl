@@ -1,0 +1,37 @@
+//import "AutomationElement.idl";
+//
+namespace uia
+{
+    [default_interface]
+    runtimeclass AutomationCondition
+    {
+    }
+//
+//    [default_interface]
+//    runtimeclass AndCondition : AutomationCondition
+//    {
+//        //Int32 ChildCount{get;};
+//        //GetChildren();
+//        //GetChildrenAsNativeArray();
+//    }
+//
+//    [default_interface]
+//    runtimeclass NotCondition : AutomationCondition
+//    {
+//        //ICondition GetChild();
+//    }
+//
+//    [default_interface]
+//    runtimeclass BoolCondition : AutomationCondition
+//    {
+//        //Boolean BooleanValue{ get; };
+//    }
+//
+//    [default_interface]
+//    runtimeclass PropertyCondition : AutomationCondition
+//    {
+//        //PropertyConditionFlags{ get; };
+//        //PropertyId{ get; };
+//        //PropertyValue{ get; };
+//    }
+}
