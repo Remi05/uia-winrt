@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>uia-winrt.RemiPelletier</id>
+    <version>1.0.0</version>
+    <title>UIA-WinRT</title>
+    <authors>Remi Pelletier</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/Remi05/uia-winrt</projectUrl>
+    <description>WinRT wrapper for UIA COM APIs</description>
+    <releaseNotes>First package release.</releaseNotes>
+    <copyright>Copyright 2021</copyright>
+    <tags>UIA WinRT Automation</tags>
+  </metadata>
+  <files>
+        <file src="..\Debug\uia.winmd" target="lib\net472"/>
+        <file src="..\Debug\uia-winrt.dll" target=""/>
+        <file src="uia-winrt.targets" target=""/>
+    </files>
+</package>
