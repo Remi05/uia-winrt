@@ -4,8 +4,8 @@
 #include "AutomationTreeWalker.g.cpp"
 #endif
 
-#include "AutomationCacheRequest.h";
-#include "AutomationCondition.h";
+#include "AutomationCacheRequest.h"
+#include "AutomationCondition.h"
 #include "AutomationElement.h"
 
 namespace winrt::uia::implementation
