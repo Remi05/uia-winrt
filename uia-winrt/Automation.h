@@ -37,7 +37,7 @@ namespace winrt::uia::implementation
         uia::AutomationCondition CreateOrCondition(uia::AutomationCondition const& condition1, uia::AutomationCondition const& condition2);
         //uia::AutomationCondition CreateOrConditionFromArray();
         //uia::AutomationCondition CreateOrConditionFromNativeArray();
-        //uia::AutomationCondition CreatePropertyCondition();
+        uia::AutomationCondition CreatePropertyCondition(uia::AutomationProperty const& property, Windows::Foundation::IInspectable const& value);
         //uia::AutomationCondition CreatePropertyConditionEx();
 
         //CreateProxyFactoryEntry();

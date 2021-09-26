@@ -8,6 +8,7 @@
 #include "AutomationCondition.h"
 #include "AutomationElement.h"
 #include "AutomationTreeWalker.h"
+#include "VariantHelpers.h"
 
 namespace winrt::uia::implementation
 {
@@ -129,7 +130,14 @@ namespace winrt::uia::implementation
 
 	//uia::AutomationCondition Automation::CreateOrConditionFromArray();
 	//uia::AutomationCondition Automation::CreateOrConditionFromNativeArray();
-	//uia::AutomationCondition Automation::CreatePropertyCondition();
+
+	uia::AutomationCondition Automation::CreatePropertyCondition(uia::AutomationProperty const& property, Windows::Foundation::IInspectable const& value)
+	{
+		com_ptr<IUIAutomationCondition> propertyCondition;
+		check_hresult(m_uiAutomation->CreatePropertyCondition(property.Id(), IInspectableToVariant(value), propertyCondition.put()));
+		return winrt::make<implementation::AutomationCondition>(propertyCondition);
+	}
+
 	//uia::AutomationCondition Automation::CreatePropertyConditionEx();
 
 	//Automation::CreateProxyFactoryEntry();

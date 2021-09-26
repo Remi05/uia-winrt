@@ -43,8 +43,8 @@ namespace uia
         AutomationCondition CreateOrCondition(AutomationCondition condition1, AutomationCondition condition2);
         //AutomationCondition CreateOrConditionFromArray();
         //AutomationCondition CreateOrConditionFromNativeArray();
-        //AutomationCondition CreatePropertyCondition();
-        //AutomationCondition CreatePropertyConditionEx();
+        AutomationCondition CreatePropertyCondition(AutomationProperty property, Object value);
+        //AutomationCondition CreatePropertyConditionEx(AutomationProperty property, Object value, PropertyConditionOptions options);
 
         //CreateProxyFactoryEntry();
         //CreateTreeWalker();
