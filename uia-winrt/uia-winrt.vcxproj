@@ -131,6 +131,7 @@
     </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="EnumHelpers.h" />
+    <ClInclude Include="VariantHelpers.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Automation.cpp">
@@ -165,6 +166,7 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="VariantHelpers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="AutomationCacheRequest.idl" />
