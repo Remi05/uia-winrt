@@ -6,34 +6,6 @@
 
 namespace winrt::uia
 {
-	OrientationType OrientationToOrientationType(uia::Orientation orientation)
-	{
-		switch (orientation)
-		{
-		case uia::Orientation::Horizontal:
-			return OrientationType_Horizontal;
-		case uia::Orientation::Vertical:
-			return OrientationType_Vertical;
-		case uia::Orientation::None:
-		default:
-			return OrientationType_None;
-		}
-	}
-
-	uia::Orientation OrientationTypeToOrientation(OrientationType orientationType)
-	{
-		switch (orientationType)
-		{
-		case OrientationType_Horizontal:
-			return uia::Orientation::Horizontal;
-		case OrientationType_Vertical:
-			return uia::Orientation::Vertical;
-		case OrientationType_None:
-		default:
-			return uia::Orientation::None;
-		}
-	}
-
 	TreeScope AutomationTreeScopeToTreeScope(uia::AutomationTreeScope automationTreeScope)
 	{
 		switch (automationTreeScope)
@@ -99,6 +71,61 @@ namespace winrt::uia
 		case AutomationElementMode_None:
 		default:
 			return uia::ElementMode::None;
+		}
+	}
+
+	OrientationType OrientationToOrientationType(uia::Orientation orientation)
+	{
+		switch (orientation)
+		{
+		case uia::Orientation::Horizontal:
+			return OrientationType_Horizontal;
+		case uia::Orientation::Vertical:
+			return OrientationType_Vertical;
+		case uia::Orientation::None:
+		default:
+			return OrientationType_None;
+		}
+	}
+
+	uia::Orientation OrientationTypeToOrientation(OrientationType orientationType)
+	{
+		switch (orientationType)
+		{
+		case OrientationType_Horizontal:
+			return uia::Orientation::Horizontal;
+		case OrientationType_Vertical:
+			return uia::Orientation::Vertical;
+		case OrientationType_None:
+		default:
+			return uia::Orientation::None;
+		}
+	}
+
+	PropertyConditionFlags PropertyConditionOptionsToPropertyConditionFlags(uia::PropertyConditionOptions propertyConditionOptions)
+	{
+		switch (propertyConditionOptions)
+		{
+			case uia::PropertyConditionOptions::IgnoreCase:
+				return PropertyConditionFlags_IgnoreCase;
+			case uia::PropertyConditionOptions::MatchSubstring:
+				return PropertyConditionFlags_IgnoreCase;
+			case uia::PropertyConditionOptions::None:
+			default:
+				return PropertyConditionFlags_IgnoreCase;
+		}
+	}
+
+	uia::PropertyConditionOptions PropertyConditionFlagsToPropertyConditionOptions(PropertyConditionFlags propertyConditionFlags)
+	{
+		switch (propertyConditionFlags)
+		{
+		case PropertyConditionFlags_IgnoreCase:
+			return uia::PropertyConditionOptions::IgnoreCase;
+		case PropertyConditionFlags_MatchSubstring:
+			return uia::PropertyConditionOptions::MatchSubstring;
+		case PropertyConditionFlags_None:
+			return uia::PropertyConditionOptions::None;
 		}
 	}
 }

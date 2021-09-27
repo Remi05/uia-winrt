@@ -6,11 +6,6 @@ namespace uia
         Assertive
     };
 
-    enum PropertyConditionOptions {
-        None,
-        IgnoreCase
-    };
-
     enum AutomationTreeScope {
         None,
         Element,
@@ -30,5 +25,11 @@ namespace uia
         None,
         Horizontal,
         Vertical
+    };
+
+    enum PropertyConditionOptions {
+        None,
+        IgnoreCase,
+        MatchSubstring
     };
 }
