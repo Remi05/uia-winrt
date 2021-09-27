@@ -29,11 +29,9 @@ namespace uia
         //AddPropertyChangedEventHandler();
         //AddPropertyChangedEventHandlerNativeArray();
         //AddStructureChangedEventHandler();
-
         //CheckNotSupported();
         Boolean CompareElements(AutomationElement el1, AutomationElement el2);
         //Boolean CompareRuntimeIds();
-
         AutomationCondition CreateAndCondition(AutomationCondition condition1, AutomationCondition condition2);
         //AutomationCondition CreateAndConditionFromArray();
         //AutomationCondition CreateAndConditionFromNativeArray();
@@ -45,7 +43,6 @@ namespace uia
         //AutomationCondition CreateOrConditionFromNativeArray();
         AutomationCondition CreatePropertyCondition(AutomationProperty property, Object value);
         AutomationCondition CreatePropertyConditionEx(AutomationProperty property, Object value, PropertyConditionOptions options);
-
         //CreateProxyFactoryEntry();
         AutomationTreeWalker CreateTreeWalker(AutomationCondition condition);
         AutomationCondition CreateTrueCondition();
@@ -61,47 +58,39 @@ namespace uia
         String GetPropertyProgrammaticName(AutomationProperty property);
         AutomationElement GetRootElement();
         AutomationElement GetRootElementBuildCache(AutomationCacheRequest cacheRequest);
-
         //IntNativeArrayToSafeArray();
         //IntSafeArrayToNativeArray();
         //PollForPotentialSupportedPatterns();
         //PollForPotentialSupportedProperties();
         //RectToVariant();
-
         void RemoveAllEventHandlers();
         //RemoveAutomationEventHandler();
         //RemoveFocusChangedEventHandler();
         //RemovePropertyChangedEventHandler();
         //RemoveStructureChangedEventHandler();
-
         //SafeArrayToRectNativeArray();
-        //VariantToRect();
-
+        //Windows.Foundation.Rect VariantToRect(Object );
 
         // ====== IUIAutomation2 ======
 
-        //Boolean AutoSetFocus{ get; set; };
-        //Int64 ConnectionTimeout{ get; set; };
-        //Int64 TransactionTimeout{ get; set; };
-
+        Boolean AutoSetFocus{ get; set; };
+        Int64 ConnectionTimeout{ get; set; };
+        Int64 TransactionTimeout{ get; set; };
 
         // ====== IUIAutomation3 ======
 
         //AddTextEditTextChangedEventHandler();
         //RemoveTextEditTextChangedEventHandler();
 
-
         // ====== IUIAutomation4 ======
 
         //AddChangesEventHandler();
         //RemoveChangesEventHandler();
 
-
         // ====== IUIAutomation5 ======
 
         //AddNotificationEventHandler();
         //RemoveNotificationEventHandler();
-
 
          // ====== IUIAutomation6 ======
 

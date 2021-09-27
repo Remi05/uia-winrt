@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "Automation.g.h"
 
@@ -23,11 +23,9 @@ namespace winrt::uia::implementation
         //AddPropertyChangedEventHandler();
         //AddPropertyChangedEventHandlerNativeArray();
         //AddStructureChangedEventHandler();
-
         //CheckNotSupported();
         bool CompareElements(uia::AutomationElement const& el1, uia::AutomationElement const& el2);
         //bool CompareRuntimeIds();
-
         uia::AutomationCondition CreateAndCondition(uia::AutomationCondition const& condition1, uia::AutomationCondition const& condition2);
         //uia::AutomationCondition CreateAndConditionFromArray();
         //uia::AutomationCondition CreateAndConditionFromNativeArray();
@@ -39,7 +37,6 @@ namespace winrt::uia::implementation
         //uia::AutomationCondition CreateOrConditionFromNativeArray();
         uia::AutomationCondition CreatePropertyCondition(uia::AutomationProperty const& property, Windows::Foundation::IInspectable const& value);
         uia::AutomationCondition CreatePropertyConditionEx(uia::AutomationProperty const& property, Windows::Foundation::IInspectable const& value, uia::PropertyConditionOptions options);
-
         //CreateProxyFactoryEntry();
         uia::AutomationTreeWalker CreateTreeWalker(uia::AutomationCondition const condition);
         uia::AutomationCondition CreateTrueCondition();
@@ -55,21 +52,53 @@ namespace winrt::uia::implementation
         hstring GetPropertyProgrammaticName(uia::AutomationProperty property);
         uia::AutomationElement GetRootElement();
         uia::AutomationElement GetRootElementBuildCache(uia::AutomationCacheRequest const& cacheRequest);
-
         //IntNativeArrayToSafeArray();
         //IntSafeArrayToNativeArray();
         //PollForPotentialSupportedPatterns();
         //PollForPotentialSupportedProperties();
         //RectToVariant();
-
         void RemoveAllEventHandlers();
         //RemoveAutomationEventHandler();
         //RemoveFocusChangedEventHandler();
         //RemovePropertyChangedEventHandler();
         //RemoveStructureChangedEventHandler();
-
         //SafeArrayToRectNativeArray();
         //VariantToRect();
+
+        // ====== IUIAutomation2 ======
+
+        bool AutoSetFocus();
+        void AutoSetFocus(bool value);
+        int64_t ConnectionTimeout();
+        void ConnectionTimeout(int64_t value);
+        int64_t TransactionTimeout();
+        void TransactionTimeout(int64_t value);
+
+        // ====== IUIAutomation3 ======
+
+        //AddTextEditTextChangedEventHandler();
+        //RemoveTextEditTextChangedEventHandler();
+
+        // ====== IUIAutomation4 ======
+
+        //AddChangesEventHandler();
+        //RemoveChangesEventHandler();
+
+        // ====== IUIAutomation5 ======
+
+        //AddNotificationEventHandler();
+        //RemoveNotificationEventHandler();
+
+         // ====== IUIAutomation6 ======
+
+        //CoalesceEvents{ get; set; };
+        //ConnectionRecoveryBehavior{ get; set; };
+
+        //AddActiveTextPositionChangedEventHandler();
+        //AddEventHandlerGroup();
+        //CreateEventHandlerGroup();
+        //RemoveActiveTextPositionChangedEventHandler();
+        //RemoveEventHandlerGroup();
       
     private:
         com_ptr<IUIAutomation> m_uiAutomation{ nullptr };

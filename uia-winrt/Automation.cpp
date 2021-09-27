@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "Automation.h"
 #if __has_include("Automation.g.cpp")
 #include "Automation.g.cpp"
@@ -246,4 +246,54 @@ namespace winrt::uia::implementation
 
 	// Automation::SafeArrayToRectNativeArray();
 	// Automation::VariantToRect();
+
+	// ====== IUIAutomation2 ======
+
+	bool Automation::AutoSetFocus()
+	{
+		BOOL autoSetFocus;
+		com_ptr<IUIAutomation2> uiAutomation2;
+		m_uiAutomation->QueryInterface(IID_IUIAutomation2, uiAutomation2.put_void());
+		check_hresult(uiAutomation2->get_AutoSetFocus(&autoSetFocus));
+		return autoSetFocus;
+	}
+
+	void Automation::AutoSetFocus(bool value)
+	{
+		com_ptr<IUIAutomation2> uiAutomation2;
+		m_uiAutomation->QueryInterface(IID_IUIAutomation2, uiAutomation2.put_void());
+		check_hresult(uiAutomation2->put_AutoSetFocus(value));
+	}
+
+	int64_t Automation::ConnectionTimeout()
+	{
+		DWORD connectionTimeout;
+		com_ptr<IUIAutomation2> uiAutomation2;
+		m_uiAutomation->QueryInterface(IID_IUIAutomation2, uiAutomation2.put_void());
+		check_hresult(uiAutomation2->get_ConnectionTimeout(&connectionTimeout));
+		return connectionTimeout;
+	}
+
+	void Automation::ConnectionTimeout(int64_t value)
+	{
+		com_ptr<IUIAutomation2> uiAutomation2;
+		m_uiAutomation->QueryInterface(IID_IUIAutomation2, uiAutomation2.put_void());
+		check_hresult(uiAutomation2->put_ConnectionTimeout(value));
+	}
+
+	int64_t Automation::TransactionTimeout()
+	{
+		DWORD transactionTimeout;
+		com_ptr<IUIAutomation2> uiAutomation2;
+		m_uiAutomation->QueryInterface(IID_IUIAutomation2, uiAutomation2.put_void());
+		check_hresult(uiAutomation2->get_TransactionTimeout(&transactionTimeout));
+		return transactionTimeout;
+	}
+
+	void Automation::TransactionTimeout(int64_t value)
+	{
+		com_ptr<IUIAutomation2> uiAutomation2;
+		m_uiAutomation->QueryInterface(IID_IUIAutomation2, uiAutomation2.put_void());
+		check_hresult(uiAutomation2->put_TransactionTimeout(value));
+	}
 }
