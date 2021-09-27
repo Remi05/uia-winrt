@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "AutomationElement.h"
 #if __has_include("AutomationElement.g.cpp")
 #include "AutomationElement.g.cpp"
@@ -520,5 +520,213 @@ namespace winrt::uia::implementation
     void AutomationElement::SetFocus()
     {
         check_hresult(m_uiAutomationElement->SetFocus());
+    }
+
+    // ====== IUIAutomationElement2 ======
+
+    uia::AutomationElementArray AutomationElement::CachedFlowsFrom()
+    {
+        com_ptr<IUIAutomationElementArray> uiAutomationElementArray;
+        com_ptr<IUIAutomationElement2> uiAutomationElement2;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement2, uiAutomationElement2.put_void());
+        check_hresult(uiAutomationElement2->get_CachedFlowsFrom(uiAutomationElementArray.put()));
+        return winrt::make<implementation::AutomationElementArray>(uiAutomationElementArray);
+    }
+
+    //uia::AutomationLiveSetting AutomationElement::CachedLiveSetting();
+
+    bool AutomationElement::CachedOptimizeForVisualContent()
+    {
+        BOOL optimizeForVisualContent;
+        com_ptr<IUIAutomationElement2> uiAutomationElement2;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement2, uiAutomationElement2.put_void());
+        check_hresult(uiAutomationElement2->get_CachedOptimizeForVisualContent(&optimizeForVisualContent));
+        return optimizeForVisualContent;
+    }
+
+    uia::AutomationElementArray AutomationElement::CurrentFlowsFrom()
+    {
+        com_ptr<IUIAutomationElementArray> uiAutomationElementArray;
+        com_ptr<IUIAutomationElement2> uiAutomationElement2;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement2, uiAutomationElement2.put_void());
+        check_hresult(uiAutomationElement2->get_CurrentFlowsFrom(uiAutomationElementArray.put()));
+        return winrt::make<implementation::AutomationElementArray>(uiAutomationElementArray);
+    }
+
+    //uia::AutomationLiveSetting AutomationElement::CurrentLiveSetting();
+
+    bool AutomationElement::CurrentOptimizeForVisualContent()
+    {
+        BOOL optimizeForVisualContent;
+        com_ptr<IUIAutomationElement2> uiAutomationElement2;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement2, uiAutomationElement2.put_void());
+        check_hresult(uiAutomationElement2->get_CurrentOptimizeForVisualContent(&optimizeForVisualContent));
+        return optimizeForVisualContent;
+    }
+
+    // ====== IUIAutomationElement3 ======
+
+    bool AutomationElement::CachedIsPeripheral()
+    {
+        BOOL isPeripheral;
+        com_ptr<IUIAutomationElement3> uiAutomationElement3;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement3, uiAutomationElement3.put_void());
+        check_hresult(uiAutomationElement3->get_CachedIsPeripheral(&isPeripheral));
+        return isPeripheral;
+    }
+
+    bool AutomationElement::CurrentIsPeripheral()
+    {
+        BOOL isPeripheral;
+        com_ptr<IUIAutomationElement3> uiAutomationElement3;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement3, uiAutomationElement3.put_void());
+        check_hresult(uiAutomationElement3->get_CurrentIsPeripheral(&isPeripheral));
+        return isPeripheral;
+    }
+
+    void AutomationElement::ShowContextMenu()
+    {
+        com_ptr<IUIAutomationElement3> uiAutomationElement3;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement3, uiAutomationElement3.put_void());
+        check_hresult(uiAutomationElement3->ShowContextMenu());
+    }
+
+    // ====== IUIAutomationElement4 ======
+
+    //AutomationElement::CachedAnnotationObjects()
+    //AutomationElement::CachedAnnotationTypes()
+
+    int AutomationElement::CachedLevel()
+    {
+        int level;
+        com_ptr<IUIAutomationElement4> uiAutomationElement4;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement4, uiAutomationElement4.put_void());
+        check_hresult(uiAutomationElement4->get_CachedLevel(&level));
+        return level;
+    }
+
+    int AutomationElement::CachedPositionInSet()
+    {
+        int positionInSet;
+        com_ptr<IUIAutomationElement4> uiAutomationElement4;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement4, uiAutomationElement4.put_void());
+        check_hresult(uiAutomationElement4->get_CachedPositionInSet(&positionInSet));
+        return positionInSet;
+    }
+
+    int AutomationElement::CachedSizeOfSet()
+    {
+        int sizeOfSet;
+        com_ptr<IUIAutomationElement4> uiAutomationElement4;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement4, uiAutomationElement4.put_void());
+        check_hresult(uiAutomationElement4->get_CachedSizeOfSet(&sizeOfSet));
+        return sizeOfSet;
+    }
+
+    //AutomationElement::CurrentAnnotationObjects()
+    //AutomationElement::CurrentAnnotationTypes()
+
+    int AutomationElement::CurrentLevel()
+    {
+        int level;
+        com_ptr<IUIAutomationElement4> uiAutomationElement4;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement4, uiAutomationElement4.put_void());
+        check_hresult(uiAutomationElement4->get_CurrentLevel(&level));
+        return level;
+    }
+
+    int AutomationElement::CurrentPositionInSet()
+    {
+        int positionInSet;
+        com_ptr<IUIAutomationElement4> uiAutomationElement4;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement4, uiAutomationElement4.put_void());
+        check_hresult(uiAutomationElement4->get_CurrentPositionInSet(&positionInSet));
+        return positionInSet;
+    }
+
+    int AutomationElement::CurrentSizeOfSet()
+    {
+        int sizeOfSet;
+        com_ptr<IUIAutomationElement4> uiAutomationElement4;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement4, uiAutomationElement4.put_void());
+        check_hresult(uiAutomationElement4->get_CurrentSizeOfSet(&sizeOfSet));
+        return sizeOfSet;
+    }
+
+    // ====== IUIAutomationElement5 ======
+
+    //AutomationElement::CachedLandmarkType();
+
+    hstring AutomationElement::CachedLocalizedLandmarkType()
+    {
+        BSTR localizedLandmarkType;
+        com_ptr<IUIAutomationElement5> uiAutomationElement5;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement5, uiAutomationElement5.put_void());
+        check_hresult(uiAutomationElement5->get_CachedLocalizedLandmarkType(&localizedLandmarkType));
+        return hstring{ std::move(localizedLandmarkType) };
+    }
+
+    //AutomationElement::CurrentLandmarkType();
+
+    hstring AutomationElement::CurrentLocalizedLandmarkType()
+    {
+        BSTR localizedLandmarkType;
+        com_ptr<IUIAutomationElement5> uiAutomationElement5;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement5, uiAutomationElement5.put_void());
+        check_hresult(uiAutomationElement5->get_CurrentLocalizedLandmarkType(&localizedLandmarkType));
+        return hstring{ std::move(localizedLandmarkType) };
+    }
+
+    // ====== IUIAutomationElement6 ======
+
+    hstring AutomationElement::CachedFullDescription()
+    {
+        BSTR fullDescription;
+        com_ptr<IUIAutomationElement9> uiAutomationElement6;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement6, uiAutomationElement6.put_void());
+        check_hresult(uiAutomationElement6->get_CachedFullDescription(&fullDescription));
+        return hstring{ std::move(fullDescription) };
+    }
+
+    hstring AutomationElement::CurrentFullDescription()
+    {
+        BSTR fullDescription;
+        com_ptr<IUIAutomationElement9> uiAutomationElement6;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement6, uiAutomationElement6.put_void());
+        check_hresult(uiAutomationElement6->get_CurrentFullDescription(&fullDescription));
+        return hstring{ std::move(fullDescription) };
+    }
+
+    // ====== IUIAutomationElement7 ======
+
+    //uia::AutomationElementArray AutomationElement::FindAllWithOptions();
+    //uia::AutomationElementArray AutomationElement::FindAllWithOptionsBuildCache();
+    //uia::AutomationElement AutomationElement::FindFirstWithOptions();
+    //uia::AutomationElement AutomationElement::FindFirstWithOptionsBuildCache();
+    //AutomationElement::GetCurrentMetadataValue();
+
+    // ====== IUIAutomationElement8 ======
+
+    //AutomationElement::CachedHeadingLevel();
+    //AutomationElement::CurrentHeadingLevel();
+
+    // ====== IUIAutomationElement9 ======
+
+    bool AutomationElement::CachedIsDialog()
+    {
+        BOOL isDialog;
+        com_ptr<IUIAutomationElement9> uiAutomationElement9;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement9, uiAutomationElement9.put_void());
+        check_hresult(uiAutomationElement9->get_CachedIsDialog(&isDialog));
+        return isDialog;
+    }
+
+    bool AutomationElement::CurrentIsDialog()
+    {
+        BOOL isDialog;
+        com_ptr<IUIAutomationElement9> uiAutomationElement9;
+        m_uiAutomationElement->QueryInterface(IID_IUIAutomationElement9, uiAutomationElement9.put_void());
+        check_hresult(uiAutomationElement9->get_CurrentIsDialog(&isDialog));
+        return isDialog;
     }
 }

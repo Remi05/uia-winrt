@@ -43,7 +43,6 @@ namespace uia
         Int32 CachedProcessId{ get; };
         String CachedProviderDescription{ get; };
 
-
         String CurrentAcceleratorKey{ get; };
         String CurrentAccessKey{ get; };
         String CurrentAriaProperties{ get; };
@@ -97,51 +96,45 @@ namespace uia
 
         void SetFocus();
 
-
         // ====== IUIAutomationElement2 ======
 
-        //AutomationElementArray CachedFlowsFrom{ get; };
+        AutomationElementArray CachedFlowsFrom{ get; };
         //AutomationLiveSetting CachedLiveSetting{ get; };
-        //Boolean CachedOptimizeForVisualContent{ get; };
-        //AutomationElementArray CurrentFlowsFrom{ get; };
+        Boolean CachedOptimizeForVisualContent{ get; };
+        AutomationElementArray CurrentFlowsFrom{ get; };
         //AutomationLiveSetting CurrentLiveSetting{ get; };
-        //Boolean CurrentOptimizeForVisualContent{ get; };
-
+        Boolean CurrentOptimizeForVisualContent{ get; };
 
         // ====== IUIAutomationElement3 ======
 
-        //Boolean CachedIsPeripheral{ get; };
-        //Boolean CurrentIsPeripheral{ get; };
-        //void ShowContextMenu();
-
+        Boolean CachedIsPeripheral{ get; };
+        Boolean CurrentIsPeripheral{ get; };
+        void ShowContextMenu();
 
         // ====== IUIAutomationElement4 ======
 
         //CachedAnnotationObjects{ get; };
         //CachedAnnotationTypes{ get; };
-        //CachedLevel{ get; };
-        //CachedPositionInSet{ get; };
-        //CachedSizeOfSet{ get; };
+        Int32 CachedLevel{ get; };
+        Int32 CachedPositionInSet{ get; };
+        Int32 CachedSizeOfSet{ get; };
         //CurrentAnnotationObjects{ get; };
         //CurrentAnnotationTypes{ get; };
-        //CurrentLevel{ get; };
-        //CurrentPositionInSet{ get; };
-        //CurrentSizeOfSet{ get; };
-
+        Int32 CurrentLevel{ get; };
+        Int32 CurrentPositionInSet{ get; };
+        Int32 CurrentSizeOfSet{ get; };
 
         // ====== IUIAutomationElement5 ======
 
         //CachedLandmarkType{ get; };
-        //String CachedLocalizedLandmarkType{ get; };
+        String CachedLocalizedLandmarkType{ get; };
         //CurrentLandmarkType{ get; };
-        //String CurrentLocalizedLandmarkType{ get; };
-
+        String CurrentLocalizedLandmarkType{ get; };
 
         // ====== IUIAutomationElement6 ======
 
-        //String CachedFullDescription{ get; };
-        //String CurrentFullDescription{ get; };
-
+        String CachedFullDescription{ get; };
+        String CurrentFullDescription{ get; };
 
         // ====== IUIAutomationElement7 ======
 
@@ -151,17 +144,15 @@ namespace uia
         //AutomationElement FindFirstWithOptionsBuildCache();
         //GetCurrentMetadataValue();
 
-
         // ====== IUIAutomationElement8 ======
 
         //CachedHeadingLevel{ get; };
         //CurrentHeadingLevel{ get; };
 
-
         // ====== IUIAutomationElement9 ======
 
-        //Boolean CachedIsDialog{ get; };
-        //Boolean CurrentIsDialog{ get; };
+        Boolean CachedIsDialog{ get; };
+        Boolean CurrentIsDialog{ get; };
     }
 
     [default_interface]

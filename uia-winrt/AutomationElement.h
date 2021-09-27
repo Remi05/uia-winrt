@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "AutomationElement.g.h"
 
@@ -97,6 +97,64 @@ namespace winrt::uia::implementation
         //GetRuntimeId();
 
         void SetFocus();
+
+        // ====== IUIAutomationElement2 ======
+
+        uia::AutomationElementArray CachedFlowsFrom();
+        //uia::AutomationLiveSetting CachedLiveSetting();
+        bool CachedOptimizeForVisualContent();
+        uia::AutomationElementArray CurrentFlowsFrom();
+        //uia::AutomationLiveSetting CurrentLiveSetting();
+        bool CurrentOptimizeForVisualContent();
+
+        // ====== IUIAutomationElement3 ======
+
+        bool CachedIsPeripheral();
+        bool CurrentIsPeripheral();
+        void ShowContextMenu();
+
+        // ====== IUIAutomationElement4 ======
+
+        //CachedAnnotationObjects();
+        //CachedAnnotationTypes();
+        int CachedLevel();
+        int CachedPositionInSet();
+        int CachedSizeOfSet();
+        //CurrentAnnotationObjects();
+        //CurrentAnnotationTypes();
+        int CurrentLevel();
+        int CurrentPositionInSet();
+        int CurrentSizeOfSet();
+
+        // ====== IUIAutomationElement5 ======
+
+        //CachedLandmarkType();
+        hstring CachedLocalizedLandmarkType();
+        //CurrentLandmarkType();
+        hstring CurrentLocalizedLandmarkType();
+
+        // ====== IUIAutomationElement6 ======
+
+        hstring CachedFullDescription();
+        hstring CurrentFullDescription();
+
+        // ====== IUIAutomationElement7 ======
+
+        //uia::AutomationElementArray FindAllWithOptions();
+        //uia::AutomationElementArray FindAllWithOptionsBuildCache();
+        //uia::AutomationElement FindFirstWithOptions();
+        //uia::AutomationElement FindFirstWithOptionsBuildCache();
+        //GetCurrentMetadataValue();
+
+        // ====== IUIAutomationElement8 ======
+
+        //CachedHeadingLevel();
+        //CurrentHeadingLevel();
+
+        // ====== IUIAutomationElement9 ======
+
+        bool CachedIsDialog();
+        bool CurrentIsDialog();
 
     private:
         com_ptr<IUIAutomationElement> m_uiAutomationElement{ nullptr };
