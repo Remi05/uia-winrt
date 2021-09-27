@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "Automation.g.h"
 
@@ -41,7 +41,7 @@ namespace winrt::uia::implementation
         uia::AutomationCondition CreatePropertyConditionEx(uia::AutomationProperty const& property, Windows::Foundation::IInspectable const& value, uia::PropertyConditionOptions options);
 
         //CreateProxyFactoryEntry();
-        //CreateTreeWalker();
+        uia::AutomationTreeWalker CreateTreeWalker(uia::AutomationCondition const condition);
         uia::AutomationCondition CreateTrueCondition();
         //uia::AutomationElement ElementFromHandle();
         //uia::AutomationElement ElementFromHandleBuildCache();

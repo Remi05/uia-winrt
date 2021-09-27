@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "Automation.h"
 #if __has_include("Automation.g.cpp")
 #include "Automation.g.cpp"
@@ -148,7 +148,15 @@ namespace winrt::uia::implementation
 	}
 
 	//Automation::CreateProxyFactoryEntry();
-	//Automation::CreateTreeWalker();
+
+	uia::AutomationTreeWalker Automation::CreateTreeWalker(uia::AutomationCondition const condition)
+	{
+		com_ptr<IUIAutomationCondition> uiAutomationCondition = winrt::get_self<implementation::AutomationCondition>(condition)->UiAutomationCondition();
+		com_ptr<IUIAutomationTreeWalker> uiAutomationTreeWalker;
+		check_hresult(m_uiAutomation->CreateTreeWalker(uiAutomationCondition.get(), uiAutomationTreeWalker.put()));
+		return winrt::make<implementation::AutomationTreeWalker>(uiAutomationTreeWalker);
+	}
+
 	uia::AutomationCondition Automation::CreateTrueCondition()
 	{
 		com_ptr<IUIAutomationCondition> trueCondition;

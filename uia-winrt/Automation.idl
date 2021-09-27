@@ -47,7 +47,7 @@ namespace uia
         AutomationCondition CreatePropertyConditionEx(AutomationProperty property, Object value, PropertyConditionOptions options);
 
         //CreateProxyFactoryEntry();
-        //CreateTreeWalker();
+        AutomationTreeWalker CreateTreeWalker(AutomationCondition condition);
         AutomationCondition CreateTrueCondition();
         //AutomationElement ElementFromHandle();
         //AutomationElement ElementFromHandleBuildCache();
