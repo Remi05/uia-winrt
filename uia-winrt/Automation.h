@@ -38,7 +38,7 @@ namespace winrt::uia::implementation
         //uia::AutomationCondition CreateOrConditionFromArray();
         //uia::AutomationCondition CreateOrConditionFromNativeArray();
         uia::AutomationCondition CreatePropertyCondition(uia::AutomationProperty const& property, Windows::Foundation::IInspectable const& value);
-        //uia::AutomationCondition CreatePropertyConditionEx();
+        uia::AutomationCondition CreatePropertyConditionEx(uia::AutomationProperty const& property, Windows::Foundation::IInspectable const& value, uia::PropertyConditionOptions options);
 
         //CreateProxyFactoryEntry();
         //CreateTreeWalker();
