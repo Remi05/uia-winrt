@@ -8,6 +8,7 @@ import "AutomationTreeWalker.idl";
 namespace uia
 {
     delegate void FocusChangedEventHandler(AutomationElement sender);
+    delegate void PropertyChangedEventHandler(AutomationElement sender, AutomationProperty property, Object newValue);
 
     [default_interface]
     runtimeclass Automation
