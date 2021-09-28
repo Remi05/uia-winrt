@@ -6,5 +6,43 @@ namespace uia
         Int32 Id{ get; };
 
         static AutomationEvent LookupById(Int32 eventId);
+
+        static AutomationEvent ActiveTextPositionChanged{ get; };
+        static AutomationEvent AsyncContentLoaded{ get; };
+        static AutomationEvent AutomationFocusChanged{ get; };
+        static AutomationEvent AutomationPropertyChanged{ get; };
+        static AutomationEvent Changes{ get; };
+        static AutomationEvent Drag_DragCancel{ get; };
+        static AutomationEvent Drag_DragComplete{ get; };
+        static AutomationEvent Drag_DragStart{ get; };
+        static AutomationEvent DropTarget_DragEnter{ get; };
+        static AutomationEvent DropTarget_DragLeave{ get; };
+        static AutomationEvent DropTarget_Dropped{ get; };
+        static AutomationEvent HostedFragmentRootsInvalidated{ get; };
+        static AutomationEvent InputDiscarded{ get; };
+        static AutomationEvent InputReachedOtherElement{ get; };
+        static AutomationEvent InputReachedTarget{ get; };
+        static AutomationEvent Invoke_Invoked{ get; };
+        static AutomationEvent LayoutInvalidated{ get; };
+        static AutomationEvent LiveRegionChanged{ get; };
+        static AutomationEvent MenuClosed{ get; };
+        static AutomationEvent MenuModeEnd{ get; };
+        static AutomationEvent MenuModeStart{ get; };
+        static AutomationEvent MenuOpened{ get; };
+        static AutomationEvent Notification{ get; };
+        static AutomationEvent Selection_Invalidated{ get; };
+        static AutomationEvent SelectionItem_ElementAddedToSelection{ get; };
+        static AutomationEvent SelectionItem_ElementRemovedFromSelection{ get; };
+        static AutomationEvent SelectionItem_ElementSelected{ get; };
+        static AutomationEvent StructureChanged{ get; };
+        static AutomationEvent SystemAlert{ get; };
+        static AutomationEvent Text_TextChanged{ get; };
+        static AutomationEvent Text_TextSelectionChanged{ get; };
+        static AutomationEvent TextEdit_ConversionTargetChanged{ get; };
+        static AutomationEvent TextEdit_TextChanged{ get; };
+        static AutomationEvent ToolTipClosed{ get; };
+        static AutomationEvent ToolTipOpened{ get; };
+        static AutomationEvent Window_WindowClosed{ get; };
+        static AutomationEvent Window_WindowOpened{ get; };
     }
 }
