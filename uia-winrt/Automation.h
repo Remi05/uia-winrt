@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "Automation.g.h"
 
@@ -18,11 +18,11 @@ namespace winrt::uia::implementation
         //ReservedMixedAttributeValue();
         //ReservedNotSupportedValue();
 
-        //AddAutomationEventHandler();
-        //AddFocusChangedEventHandler();
-        //AddPropertyChangedEventHandler();
-        //AddPropertyChangedEventHandlerNativeArray();
-        //AddStructureChangedEventHandler();
+        //void AddAutomationEventHandler(uia::AutomationCacheRequest const& cacheRequest, uia::AutomationEventHandler const& handler);
+        void AddFocusChangedEventHandler(uia::AutomationCacheRequest const& cacheRequest, uia::FocusChangedEventHandler const& handler);
+        //void AddPropertyChangedEventHandler(uia::AutomationCacheRequest const& cacheRequest, uia::PropertyChangedEventHandler const& handler);
+        //void AddPropertyChangedEventHandlerNativeArray();
+        //void AddStructureChangedEventHandler(uia::AutomationCacheRequest const& cacheRequest, uia::StructureChangedEventHandler const& handler);
         //CheckNotSupported();
         bool CompareElements(uia::AutomationElement const& el1, uia::AutomationElement const& el2);
         //bool CompareRuntimeIds();
@@ -58,10 +58,10 @@ namespace winrt::uia::implementation
         //PollForPotentialSupportedProperties();
         //RectToVariant();
         void RemoveAllEventHandlers();
-        //RemoveAutomationEventHandler();
-        //RemoveFocusChangedEventHandler();
-        //RemovePropertyChangedEventHandler();
-        //RemoveStructureChangedEventHandler();
+        //void RemoveAutomationEventHandler(uia::AutomationEventHandler const& handler);
+        void RemoveFocusChangedEventHandler(uia::FocusChangedEventHandler const& handler);
+        //void RemovePropertyChangedEventHandler(uia::PropertyChangedEventHandler const& handler);
+        //void RemoveStructureChangedEventHandler(uia::StructureChangedEventHandler const& handler);
         //SafeArrayToRectNativeArray();
         //VariantToRect();
 

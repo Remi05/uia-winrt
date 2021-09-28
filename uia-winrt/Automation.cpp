@@ -7,6 +7,7 @@
 #include "AutomationCacheRequest.h"
 #include "AutomationCondition.h"
 #include "AutomationElement.h"
+#include "AutomationFocusChangedEventHandler.h"
 #include "AutomationTreeWalker.h"
 #include "EnumHelpers.h"
 #include "VariantHelpers.h"
@@ -68,7 +69,18 @@ namespace winrt::uia::implementation
 	//Automation::ReservedNotSupportedValue();
 
 	//Automation::AddAutomationEventHandler();
-	//Automation::AddFocusChangedEventHandler();
+
+	void Automation::AddFocusChangedEventHandler(uia::AutomationCacheRequest const& cacheRequest, uia::FocusChangedEventHandler const& handler)
+	{
+		com_ptr<IUIAutomationCacheRequest> uiAutomationCacheRequest{ nullptr };
+		if (cacheRequest)
+		{
+			uiAutomationCacheRequest = winrt::get_self<implementation::AutomationCacheRequest>(cacheRequest)->UiAutomationCacheRequest();
+		}
+		auto focusChangedHandler = winrt::make<implementation::AutomationFocusChangedEventHandler>(handler);
+		check_hresult(m_uiAutomation->AddFocusChangedEventHandler(uiAutomationCacheRequest.get(), focusChangedHandler.get()));
+	}
+
 	//Automation::AddPropertyChangedEventHandler();
 	//Automation::AddPropertyChangedEventHandlerNativeArray();
 	//Automation::AddStructureChangedEventHandler();
@@ -239,10 +251,16 @@ namespace winrt::uia::implementation
 		check_hresult(m_uiAutomation->RemoveAllEventHandlers());
 	}
 
-	// Automation::RemoveAutomationEventHandler();
-	// Automation::RemoveFocusChangedEventHandler();
-	// Automation::RemovePropertyChangedEventHandler();
-	// Automation::RemoveStructureChangedEventHandler();
+	//void Automation::RemoveAutomationEventHandler(uia::AutomationEventHandler const& handler);
+
+	void Automation::RemoveFocusChangedEventHandler(uia::FocusChangedEventHandler const& handler)
+	{
+		auto focusChangedHandler = winrt::make<implementation::AutomationFocusChangedEventHandler>(handler);
+		check_hresult(m_uiAutomation->RemoveFocusChangedEventHandler(focusChangedHandler.get()));
+	}
+
+	//void Automation::RemovePropertyChangedEventHandler(uia::PropertyChangedEventHandler const& handler);
+	//void Automation::RemoveStructureChangedEventHandler(uia::StructureChangedEventHandler const& handler);
 
 	// Automation::SafeArrayToRectNativeArray();
 	// Automation::VariantToRect();

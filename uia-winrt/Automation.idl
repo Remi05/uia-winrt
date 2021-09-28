@@ -7,6 +7,8 @@ import "AutomationTreeWalker.idl";
 
 namespace uia
 {
+    delegate void FocusChangedEventHandler(AutomationElement sender);
+
     [default_interface]
     runtimeclass Automation
     {
@@ -24,11 +26,11 @@ namespace uia
         //ReservedMixedAttributeValue{ get; };
         //ReservedNotSupportedValue{ get; };
 
-        //AddAutomationEventHandler();
-        //AddFocusChangedEventHandler();
-        //AddPropertyChangedEventHandler();
-        //AddPropertyChangedEventHandlerNativeArray();
-        //AddStructureChangedEventHandler();
+        //void AddAutomationEventHandler(AutomationCacheRequest cacheRequest, AutomationEventHandler handler);
+        void AddFocusChangedEventHandler(AutomationCacheRequest cacheRequest, FocusChangedEventHandler handler);
+        //void AddPropertyChangedEventHandler(AutomationCacheRequest cacheRequest, PropertyChangedEventHandler handler);
+        //void AddPropertyChangedEventHandlerNativeArray();
+        //void AddStructureChangedEventHandler(AutomationCacheRequest cacheRequest, StructureChangedEventHandler handler);
         //CheckNotSupported();
         Boolean CompareElements(AutomationElement el1, AutomationElement el2);
         //Boolean CompareRuntimeIds();
@@ -64,10 +66,10 @@ namespace uia
         //PollForPotentialSupportedProperties();
         //RectToVariant();
         void RemoveAllEventHandlers();
-        //RemoveAutomationEventHandler();
-        //RemoveFocusChangedEventHandler();
-        //RemovePropertyChangedEventHandler();
-        //RemoveStructureChangedEventHandler();
+        //void RemoveAutomationEventHandler(AutomationEventHandler handler);
+        //void RemoveFocusChangedEventHandler(FocusChangedEventHandler handler);
+        //void RemovePropertyChangedEventHandler(PropertyChangedEventHandler handler);
+        //void RemoveStructureChangedEventHandler(StructureChangedEventHandler handler);
         //SafeArrayToRectNativeArray();
         //Windows.Foundation.Rect VariantToRect(Object );
 
