@@ -60,7 +60,7 @@ namespace winrt::uia::implementation
         void RemoveAllEventHandlers();
         //void RemoveAutomationEventHandler(uia::AutomationEventHandler const& handler);
         void RemoveFocusChangedEventHandler(uia::FocusChangedEventHandler const& handler);
-        //void RemovePropertyChangedEventHandler(uia::PropertyChangedEventHandler const& handler);
+        void RemovePropertyChangedEventHandler(uia::AutomationElement const& element, uia::PropertyChangedEventHandler const& handler);
         //void RemoveStructureChangedEventHandler(uia::StructureChangedEventHandler const& handler);
         //SafeArrayToRectNativeArray();
         //VariantToRect();

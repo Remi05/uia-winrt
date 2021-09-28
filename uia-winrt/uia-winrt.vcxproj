@@ -123,6 +123,7 @@
     <ClInclude Include="AutomationProperty.h">
       <DependentUpon>AutomationProperty.idl</DependentUpon>
     </ClInclude>
+    <ClInclude Include="AutomationPropertyChangedEventHandler.h" />
     <ClInclude Include="AutomationTreeWalker.h">
       <DependentUpon>AutomationTreeWalker.idl</DependentUpon>
     </ClInclude>
@@ -156,6 +157,7 @@
     <ClCompile Include="AutomationProperty.cpp">
       <DependentUpon>AutomationProperty.idl</DependentUpon>
     </ClCompile>
+    <ClCompile Include="AutomationPropertyChangedEventHandler.cpp" />
     <ClCompile Include="AutomationTreeWalker.cpp">
       <DependentUpon>AutomationTreeWalker.idl</DependentUpon>
     </ClCompile>

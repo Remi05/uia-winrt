@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "Automation.h"
 #if __has_include("Automation.g.cpp")
 #include "Automation.g.cpp"
@@ -259,7 +259,13 @@ namespace winrt::uia::implementation
 		check_hresult(m_uiAutomation->RemoveFocusChangedEventHandler(focusChangedHandler.get()));
 	}
 
-	//void Automation::RemovePropertyChangedEventHandler(uia::PropertyChangedEventHandler const& handler);
+	void Automation::RemovePropertyChangedEventHandler(uia::AutomationElement const& element, uia::PropertyChangedEventHandler const& handler)
+	{
+		com_ptr<IUIAutomationElement> uiAutomationElement = winrt::get_self<implementation::AutomationElement>(element)->UiAutomationElement();
+		auto propertyChangedHandler = winrt::make<implementation::AutomationPropertyChangedEventHandler>(handler);
+		check_hresult(m_uiAutomation->RemovePropertyChangedEventHandler(uiAutomationElement.get(), propertyChangedHandler.get()));
+	}
+
 	//void Automation::RemoveStructureChangedEventHandler(uia::StructureChangedEventHandler const& handler);
 
 	// Automation::SafeArrayToRectNativeArray();

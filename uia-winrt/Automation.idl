@@ -68,7 +68,7 @@ namespace uia
         void RemoveAllEventHandlers();
         //void RemoveAutomationEventHandler(AutomationEventHandler handler);
         //void RemoveFocusChangedEventHandler(FocusChangedEventHandler handler);
-        //void RemovePropertyChangedEventHandler(PropertyChangedEventHandler handler);
+        void RemovePropertyChangedEventHandler(AutomationElement element, PropertyChangedEventHandler handler);
         //void RemoveStructureChangedEventHandler(StructureChangedEventHandler handler);
         //SafeArrayToRectNativeArray();
         //Windows.Foundation.Rect VariantToRect(Object );
