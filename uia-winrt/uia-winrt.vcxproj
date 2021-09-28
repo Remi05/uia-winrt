@@ -117,6 +117,9 @@
     <ClInclude Include="AutomationElementArray.h">
       <DependentUpon>AutomationElement.idl</DependentUpon>
     </ClInclude>
+    <ClInclude Include="AutomationEvent.h">
+      <DependentUpon>AutomationEvent.idl</DependentUpon>
+    </ClInclude>
     <ClInclude Include="AutomationPattern.h">
       <DependentUpon>AutomationPattern.idl</DependentUpon>
     </ClInclude>
@@ -151,6 +154,9 @@
     <ClCompile Include="AutomationElementArray.cpp">
       <DependentUpon>AutomationElement.idl</DependentUpon>
     </ClCompile>
+    <ClCompile Include="AutomationEvent.cpp">
+      <DependentUpon>AutomationEvent.idl</DependentUpon>
+    </ClCompile>
     <ClCompile Include="AutomationPattern.cpp">
       <DependentUpon>AutomationPattern.idl</DependentUpon>
     </ClCompile>
@@ -180,6 +186,7 @@
     </Midl>
     <Midl Include="Automation.idl" />
     <Midl Include="AutomationEnums.idl" />
+    <Midl Include="AutomationEvent.idl" />
     <Midl Include="AutomationPattern.idl" />
     <Midl Include="AutomationProperty.idl" />
     <Midl Include="AutomationTreeWalker.idl" />

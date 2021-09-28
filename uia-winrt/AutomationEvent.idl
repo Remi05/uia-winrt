@@ -1,0 +1,10 @@
+namespace uia
+{
+    [default_interface]
+    runtimeclass AutomationEvent
+    {
+        Int32 Id{ get; };
+
+        static AutomationEvent LookupById(Int32 eventId);
+    }
+}
