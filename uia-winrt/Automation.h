@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "Automation.g.h"
 
@@ -18,9 +18,9 @@ namespace winrt::uia::implementation
         //ReservedMixedAttributeValue();
         //ReservedNotSupportedValue();
 
-        //void AddAutomationEventHandler(uia::AutomationCacheRequest const& cacheRequest, uia::AutomationEventHandler const& handler);
+        //void AddAutomationEventHandler(uia::AutomationElement const& element, uia::AutomationTreeScope scope, uia::AutomationCacheRequest const& cacheRequest, uia::AutomationEventHandler const& handler);
         void AddFocusChangedEventHandler(uia::AutomationCacheRequest const& cacheRequest, uia::FocusChangedEventHandler const& handler);
-        //void AddPropertyChangedEventHandler(uia::AutomationCacheRequest const& cacheRequest, uia::PropertyChangedEventHandler const& handler);
+        //void AddPropertyChangedEventHandler(uia::AutomationElement const& element, uia::AutomationTreeScope scope, uia::AutomationCacheRequest const& cacheRequest, uia::PropertyChangedEventHandler const& handler);
         //void AddPropertyChangedEventHandlerNativeArray();
         //void AddStructureChangedEventHandler(uia::AutomationCacheRequest const& cacheRequest, uia::StructureChangedEventHandler const& handler);
         //CheckNotSupported();

@@ -16,7 +16,7 @@ namespace uia
 //    [default_interface]
 //    runtimeclass NotCondition : AutomationCondition
 //    {
-//        //ICondition GetChild();
+//        //AutomationCondition GetChild();
 //    }
 //
 //    [default_interface]

@@ -84,14 +84,14 @@ namespace uia
         AutomationElementArray GetCachedChildren();
         AutomationElement GetCachedParent();
         //IInspectable GetCachedPattern(AutomationPattern pattern);
-        //GetCachedPatternAs(AutomationPattern pattern);
+        //IInspectable GetCachedPatternAs(AutomationPattern pattern);
         //IInspectable GetCachedPropertyValue(AutomationProperty property);
-        //GetCachedPropertyValueEx(AutomationProperty property);
+        //IInspectable GetCachedPropertyValueEx(AutomationProperty property);
         //Boolean TryGetClickablePoint(Windows.Foundation.Point point);
         //IInspectable GetCurrentPattern(AutomationPattern pattern);
-        //GetCurrentPatternAs(AutomationPattern pattern);
+        //IInspectable GetCurrentPatternAs(AutomationPattern pattern);
         //IInspectable GetCurrentPropertyValue(AutomationProperty property);
-        //GetCurrentPropertyValueEx(AutomationProperty property);
+        //IInspectable GetCurrentPropertyValueEx(AutomationProperty property);
         //GetRuntimeId();
 
         void SetFocus();
@@ -126,9 +126,9 @@ namespace uia
 
         // ====== IUIAutomationElement5 ======
 
-        //CachedLandmarkType{ get; };
+        //AutomationLandmarkType CachedLandmarkType{ get; };
         String CachedLocalizedLandmarkType{ get; };
-        //CurrentLandmarkType{ get; };
+        //AutomationLandmarkType CurrentLandmarkType{ get; };
         String CurrentLocalizedLandmarkType{ get; };
 
         // ====== IUIAutomationElement6 ======
@@ -146,8 +146,8 @@ namespace uia
 
         // ====== IUIAutomationElement8 ======
 
-        //CachedHeadingLevel{ get; };
-        //CurrentHeadingLevel{ get; };
+        //AutomationHeadingLevel CachedHeadingLevel{ get; };
+        //AutomationHeadingLevel CurrentHeadingLevel{ get; };
 
         // ====== IUIAutomationElement9 ======
 

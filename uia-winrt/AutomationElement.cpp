@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "AutomationElement.h"
 #if __has_include("AutomationElement.g.cpp")
 #include "AutomationElement.g.cpp"
@@ -14,6 +14,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedAcceleratorKey()
     {
         BSTR acceleratorKey;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedAcceleratorKey(&acceleratorKey));
         return hstring{ std::move(acceleratorKey) };
     }
@@ -21,6 +22,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedAccessKey()
     {
         BSTR accessKey;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedAccessKey(&accessKey));
         return hstring{ std::move(accessKey) };
     }
@@ -28,6 +30,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedAriaProperties()
     {
         BSTR ariaProperties;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedAriaProperties(&ariaProperties));
         return hstring{ std::move(ariaProperties) };
     }
@@ -35,6 +38,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedAriaRole()
     {
         BSTR ariaRole;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedAriaRole(&ariaRole));
         return hstring{ std::move(ariaRole) };
     }
@@ -42,6 +46,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedAutomationId()
     {
         BSTR automationId;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedAutomationId(&automationId));
         return hstring{ std::move(automationId) };
     }
@@ -49,6 +54,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedClassName()
     {
         BSTR className;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedClassName(&className));
         return className;
     }
@@ -56,6 +62,7 @@ namespace winrt::uia::implementation
     Windows::Foundation::Rect AutomationElement::CachedBoundingRectangle()
     {
         RECT boundingRect{ 0, 0, 0, 0 };
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedBoundingRectangle(&boundingRect));
         float width = (float)boundingRect.right - (float)boundingRect.left;
         float height = (float)boundingRect.bottom - (float)boundingRect.top;
@@ -65,6 +72,7 @@ namespace winrt::uia::implementation
     uia::AutomationElementArray AutomationElement::CachedControllerFor()
     {
         com_ptr<IUIAutomationElementArray> controllerFor;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedControllerFor(controllerFor.put()));
         return winrt::make<implementation::AutomationElementArray>(controllerFor);
     }
@@ -72,6 +80,7 @@ namespace winrt::uia::implementation
     uia::ControlType AutomationElement::CachedControlType()
     {
         CONTROLTYPEID controlTypeId;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedControlType(&controlTypeId));
         return uia::ControlType::LookupById(controlTypeId);
     }
@@ -79,6 +88,7 @@ namespace winrt::uia::implementation
     int AutomationElement::CachedCulture()
     {
         int culture;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedCulture(&culture));
         return culture;
     }
@@ -86,6 +96,7 @@ namespace winrt::uia::implementation
     uia::AutomationElementArray AutomationElement::CachedDescribedBy()
     {
         com_ptr<IUIAutomationElementArray> describedBy;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedDescribedBy(describedBy.put()));
         return winrt::make<implementation::AutomationElementArray>(describedBy);
     }
@@ -93,6 +104,7 @@ namespace winrt::uia::implementation
     uia::AutomationElementArray AutomationElement::CachedFlowsTo()
     {
         com_ptr<IUIAutomationElementArray> flowsTo;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedFlowsTo(flowsTo.put()));
         return winrt::make<implementation::AutomationElementArray>(flowsTo);
     }
@@ -100,6 +112,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedFrameworkId()
     {
         BSTR frameworkId;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedFrameworkId(&frameworkId));
         return frameworkId;
     }
@@ -107,6 +120,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CachedHasKeyboardFocus()
     {
         BOOL hasKeyboardFocus;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedHasKeyboardFocus(&hasKeyboardFocus));
         return hasKeyboardFocus;
     }
@@ -114,6 +128,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedHelpText()
     {
         BSTR helpText;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedHelpText(&helpText));
         return helpText;
     }
@@ -121,6 +136,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CachedIsContentElement()
     {
         BOOL isContentElement;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedIsContentElement(&isContentElement));
         return isContentElement;
     }
@@ -128,6 +144,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CachedIsControlElement()
     {
         BOOL isControlElement;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedIsControlElement(&isControlElement));
         return isControlElement;
     }
@@ -135,6 +152,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CachedIsDataValidForForm()
     {
         BOOL isDataValidForForm;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedIsDataValidForForm(&isDataValidForForm));
         return isDataValidForForm;
     }
@@ -142,6 +160,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CachedIsEnabled()
     {
         BOOL isEnabled;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedIsEnabled(&isEnabled));
         return isEnabled;
     }
@@ -149,6 +168,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CachedIsKeyboardFocusable()
     {
         BOOL isKeyboardFocusable;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedIsKeyboardFocusable(&isKeyboardFocusable));
         return isKeyboardFocusable;
     }
@@ -156,6 +176,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CachedIsOffscreen()
     {
         BOOL isOffscreen;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedIsOffscreen(&isOffscreen));
         return isOffscreen;
     }
@@ -163,6 +184,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CachedIsPassword()
     {
         BOOL isPassword;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedIsPassword(&isPassword));
         return isPassword;
     }
@@ -170,6 +192,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CachedIsRequiredForForm()
     {
         BOOL isRequiredForForm;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedIsRequiredForForm(&isRequiredForForm));
         return isRequiredForForm;
     }
@@ -177,6 +200,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedItemStatus()
     {
         BSTR itemStatus;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedItemStatus(&itemStatus));
         return hstring{ std::move(itemStatus) };
     }
@@ -184,6 +208,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedItemType()
     {
         BSTR itemType;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedItemType(&itemType));
         return hstring{ std::move(itemType) };
     }
@@ -191,6 +216,7 @@ namespace winrt::uia::implementation
     uia::AutomationElement AutomationElement::CachedLabeledBy()
     {
         com_ptr<IUIAutomationElement> labeledBy;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedLabeledBy(labeledBy.put()));
         return winrt::make<implementation::AutomationElement>(labeledBy);
     }
@@ -198,6 +224,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedLocalizedControlType()
     {
         BSTR localizedControlType;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedLocalizedControlType(&localizedControlType));
         return hstring{ std::move(localizedControlType) };
     }
@@ -207,6 +234,7 @@ namespace winrt::uia::implementation
     uia::Orientation AutomationElement::CachedOrientation()
     {
         OrientationType orientationType;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedOrientation(&orientationType));
         return OrientationTypeToOrientation(orientationType);
     }
@@ -214,6 +242,7 @@ namespace winrt::uia::implementation
     int AutomationElement::CachedProcessId()
     {
         int processId;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedProcessId(&processId));
         return processId;
     }
@@ -221,6 +250,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedProviderDescription()
     {
         BSTR providerDescription;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedProviderDescription(&providerDescription));
         return hstring{ std::move(providerDescription) };
     }
@@ -228,6 +258,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CachedName()
     {
         BSTR name;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CachedName(&name));
         return hstring{ std::move(name) };
     }
@@ -237,6 +268,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentAcceleratorKey()
     {
         BSTR acceleratorKey;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentAcceleratorKey(&acceleratorKey));
         return hstring{ std::move(acceleratorKey) };
     }
@@ -244,6 +276,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentAccessKey()
     {
         BSTR accessKey;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentAccessKey(&accessKey));
         return hstring{ std::move(accessKey) };
     }
@@ -251,6 +284,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentAriaProperties()
     {
         BSTR ariaProperties;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentAriaProperties(&ariaProperties));
         return hstring{ std::move(ariaProperties) };
     }
@@ -258,6 +292,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentAriaRole()
     {
         BSTR ariaRole;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentAriaRole(&ariaRole));
         return hstring{ std::move(ariaRole) };
     }
@@ -265,6 +300,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentAutomationId()
     {
         BSTR automationId;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentAutomationId(&automationId));
         return hstring{ std::move(automationId) };
     }
@@ -272,6 +308,7 @@ namespace winrt::uia::implementation
     Windows::Foundation::Rect AutomationElement::CurrentBoundingRectangle()
     {
         RECT boundingRect{ 0, 0, 0, 0 };
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentBoundingRectangle(&boundingRect));
         float width = (float)boundingRect.right - (float)boundingRect.left;
         float height = (float)boundingRect.bottom - (float)boundingRect.top;
@@ -281,6 +318,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentClassName()
     {
         BSTR className;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentClassName(&className));
         return className;
     }
@@ -288,6 +326,7 @@ namespace winrt::uia::implementation
     uia::AutomationElementArray AutomationElement::CurrentControllerFor()
     {
         com_ptr<IUIAutomationElementArray> controllerFor;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentControllerFor(controllerFor.put()));
         return winrt::make<implementation::AutomationElementArray>(controllerFor);
     }
@@ -295,6 +334,7 @@ namespace winrt::uia::implementation
     uia::ControlType AutomationElement::CurrentControlType()
     {
         CONTROLTYPEID controlTypeId;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentControlType(&controlTypeId));
         return uia::ControlType::LookupById(controlTypeId);
     }
@@ -302,6 +342,7 @@ namespace winrt::uia::implementation
     int AutomationElement::CurrentCulture()
     {
         int culture;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentCulture(&culture));
         return culture;
     }
@@ -309,6 +350,7 @@ namespace winrt::uia::implementation
     uia::AutomationElementArray AutomationElement::CurrentDescribedBy()
     {
         com_ptr<IUIAutomationElementArray> describedBy;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentDescribedBy(describedBy.put()));
         return winrt::make<implementation::AutomationElementArray>(describedBy);
     }
@@ -316,6 +358,7 @@ namespace winrt::uia::implementation
     uia::AutomationElementArray AutomationElement::CurrentFlowsTo()
     {
         com_ptr<IUIAutomationElementArray> flowsTo;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentFlowsTo(flowsTo.put()));
         return winrt::make<implementation::AutomationElementArray>(flowsTo);
     }
@@ -323,6 +366,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentFrameworkId()
     {
         BSTR frameworkId;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentFrameworkId(&frameworkId));
         return frameworkId;
     }
@@ -330,6 +374,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CurrentHasKeyboardFocus()
     {
         BOOL hasKeyboardFocus;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentHasKeyboardFocus(&hasKeyboardFocus));
         return hasKeyboardFocus;
     }
@@ -337,6 +382,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentHelpText()
     {
         BSTR helpText;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentHelpText(&helpText));
         return helpText;
     }
@@ -344,6 +390,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CurrentIsContentElement()
     {
         BOOL isContentElement;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentIsContentElement(&isContentElement));
         return isContentElement;
     }
@@ -351,6 +398,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CurrentIsControlElement()
     {
         BOOL isControlElement;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentIsControlElement(&isControlElement));
         return isControlElement;
     }
@@ -358,6 +406,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CurrentIsDataValidForForm()
     {
         BOOL isDataValidForForm;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentIsDataValidForForm(&isDataValidForForm));
         return isDataValidForForm;
     }
@@ -365,6 +414,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CurrentIsEnabled()
     {
         BOOL isEnabled;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentIsEnabled(&isEnabled));
         return isEnabled;
     }
@@ -372,6 +422,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CurrentIsKeyboardFocusable()
     {
         BOOL isKeyboardFocusable;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentIsKeyboardFocusable(&isKeyboardFocusable));
         return isKeyboardFocusable;
     }
@@ -379,6 +430,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CurrentIsOffscreen()
     {
         BOOL isOffscreen;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentIsOffscreen(&isOffscreen));
         return isOffscreen;
     }
@@ -386,6 +438,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CurrentIsPassword()
     {
         BOOL isPassword;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentIsPassword(&isPassword));
         return isPassword;
     }
@@ -393,6 +446,7 @@ namespace winrt::uia::implementation
     bool AutomationElement::CurrentIsRequiredForForm()
     {
         BOOL isRequiredForForm;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentIsRequiredForForm(&isRequiredForForm));
         return isRequiredForForm;
     }
@@ -400,6 +454,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentItemStatus()
     {
         BSTR itemStatus;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentItemStatus(&itemStatus));
         return hstring{ std::move(itemStatus) };
     }
@@ -407,6 +462,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentItemType()
     {
         BSTR itemType;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentItemType(&itemType));
         return hstring{ std::move(itemType) };
     }
@@ -414,6 +470,7 @@ namespace winrt::uia::implementation
     uia::AutomationElement AutomationElement::CurrentLabeledBy()
     {
         com_ptr<IUIAutomationElement> labeledBy;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentLabeledBy(labeledBy.put()));
         return winrt::make<implementation::AutomationElement>(labeledBy);
     }
@@ -421,6 +478,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentLocalizedControlType()
     {
         BSTR localizedControlType;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentLocalizedControlType(&localizedControlType));
         return hstring{ std::move(localizedControlType) };
     }
@@ -428,6 +486,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentName()
     {
         BSTR name;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentName(&name));
         return hstring{ std::move(name) };
     }
@@ -437,6 +496,7 @@ namespace winrt::uia::implementation
     uia::Orientation AutomationElement::CurrentOrientation()
     {
         OrientationType orientationType;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentOrientation(&orientationType));
         return OrientationTypeToOrientation(orientationType);
     }
@@ -444,6 +504,7 @@ namespace winrt::uia::implementation
     int AutomationElement::CurrentProcessId()
     {
         int processId;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentProcessId(&processId));
         return processId;
     }
@@ -451,6 +512,7 @@ namespace winrt::uia::implementation
     hstring AutomationElement::CurrentProviderDescription()
     {
         BSTR providerDescription;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->get_CurrentProviderDescription(&providerDescription));
         return hstring{ std::move(providerDescription) };
     }
@@ -459,6 +521,7 @@ namespace winrt::uia::implementation
     {
         com_ptr<IUIAutomationCacheRequest> uiAutomationCacheRequest = winrt::get_self<implementation::AutomationCacheRequest>(cacheRequest)->UiAutomationCacheRequest();
         com_ptr<IUIAutomationElement> uiAutomationElement;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->BuildUpdatedCache(uiAutomationCacheRequest.get(), uiAutomationElement.put()));
         return winrt::make<implementation::AutomationElement>(uiAutomationElement);
     }
@@ -468,6 +531,7 @@ namespace winrt::uia::implementation
         TreeScope scope = AutomationTreeScopeToTreeScope(treeScope);
         com_ptr<IUIAutomationCondition> uiAutomationCondition = winrt::get_self<implementation::AutomationCondition>(condition)->UiAutomationCondition();
         com_ptr<IUIAutomationElementArray> uiAutomationElementArray;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->FindAll(scope, uiAutomationCondition.get(), uiAutomationElementArray.put()));
         return winrt::make<implementation::AutomationElementArray>(uiAutomationElementArray);
     }
@@ -478,6 +542,7 @@ namespace winrt::uia::implementation
         com_ptr<IUIAutomationCondition> uiAutomationCondition = winrt::get_self<implementation::AutomationCondition>(condition)->UiAutomationCondition();
         com_ptr<IUIAutomationCacheRequest> uiAutomationCacheRequest = winrt::get_self<implementation::AutomationCacheRequest>(cacheRequest)->UiAutomationCacheRequest();
         com_ptr<IUIAutomationElementArray> uiAutomationElementArray;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->FindAllBuildCache(scope, uiAutomationCondition.get(), uiAutomationCacheRequest.get(), uiAutomationElementArray.put()));
         return winrt::make<implementation::AutomationElementArray>(uiAutomationElementArray);
     }
@@ -487,6 +552,7 @@ namespace winrt::uia::implementation
         TreeScope scope = AutomationTreeScopeToTreeScope(treeScope);
         com_ptr<IUIAutomationCondition> uiAutomationCondition = winrt::get_self<implementation::AutomationCondition>(condition)->UiAutomationCondition();
         com_ptr<IUIAutomationElement> uiAutomationElement;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->FindFirst(scope, uiAutomationCondition.get(), uiAutomationElement.put()));
         return winrt::make<implementation::AutomationElement>(uiAutomationElement);
     }
@@ -497,6 +563,7 @@ namespace winrt::uia::implementation
         com_ptr<IUIAutomationCondition> uiAutomationCondition = winrt::get_self<implementation::AutomationCondition>(condition)->UiAutomationCondition();
         com_ptr<IUIAutomationCacheRequest> uiAutomationCacheRequest = winrt::get_self<implementation::AutomationCacheRequest>(cacheRequest)->UiAutomationCacheRequest();
         com_ptr<IUIAutomationElement> uiAutomationElement;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->FindFirstBuildCache(scope, uiAutomationCondition.get(), uiAutomationCacheRequest.get(), uiAutomationElement.put()));
         return winrt::make<implementation::AutomationElement>(uiAutomationElement);
     }
@@ -505,6 +572,7 @@ namespace winrt::uia::implementation
     uia::AutomationElementArray AutomationElement::GetCachedChildren()
     {
         com_ptr<IUIAutomationElementArray> children;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->GetCachedChildren(children.put()));
         return winrt::make<implementation::AutomationElementArray>(children);
     }
@@ -512,6 +580,7 @@ namespace winrt::uia::implementation
     uia::AutomationElement AutomationElement::GetCachedParent()
     {
         com_ptr<IUIAutomationElement> parent;
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->GetCachedParent(parent.put()));
         return winrt::make<implementation::AutomationElement>(parent);
     }
@@ -519,6 +588,7 @@ namespace winrt::uia::implementation
     // Actions
     void AutomationElement::SetFocus()
     {
+        check_pointer(m_uiAutomationElement.get());
         check_hresult(m_uiAutomationElement->SetFocus());
     }
 

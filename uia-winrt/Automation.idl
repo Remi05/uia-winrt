@@ -7,8 +7,13 @@ import "AutomationTreeWalker.idl";
 
 namespace uia
 {
+    //delegate void AutomationEventHandler();
     delegate void FocusChangedEventHandler(AutomationElement sender);
     delegate void PropertyChangedEventHandler(AutomationElement sender, AutomationProperty property, Object newValue);
+    //delegate void StructureChangedEventHandler();
+    //delegate void TextEditTextChangedEventHandler();
+    //delegate void NotificationEventHandler();
+    //delegate void ActiveTextPositionChangedEventHandler();
 
     [default_interface]
     runtimeclass Automation
@@ -27,9 +32,9 @@ namespace uia
         //ReservedMixedAttributeValue{ get; };
         //ReservedNotSupportedValue{ get; };
 
-        //void AddAutomationEventHandler(AutomationCacheRequest cacheRequest, AutomationEventHandler handler);
+        //void AddAutomationEventHandler(AutomationEvent event, AutomationElement element, AutomationTreeScope scope, AutomationCacheRequest cacheRequest, AutomationEventHandler handler);
         void AddFocusChangedEventHandler(AutomationCacheRequest cacheRequest, FocusChangedEventHandler handler);
-        //void AddPropertyChangedEventHandler(AutomationCacheRequest cacheRequest, PropertyChangedEventHandler handler);
+        //void AddPropertyChangedEventHandler(AutomationElement element, AutomationTreeScope scope, AutomationCacheRequest cacheRequest, PropertyChangedEventHandler handler);
         //void AddPropertyChangedEventHandlerNativeArray();
         //void AddStructureChangedEventHandler(AutomationCacheRequest cacheRequest, StructureChangedEventHandler handler);
         //CheckNotSupported();
@@ -65,14 +70,14 @@ namespace uia
         //IntSafeArrayToNativeArray();
         //PollForPotentialSupportedPatterns();
         //PollForPotentialSupportedProperties();
-        //RectToVariant();
+        //Object RectToVariant(Windows.Foundation.Rect rect);
         void RemoveAllEventHandlers();
         //void RemoveAutomationEventHandler(AutomationEventHandler handler);
-        //void RemoveFocusChangedEventHandler(FocusChangedEventHandler handler);
+        void RemoveFocusChangedEventHandler(FocusChangedEventHandler handler);
         void RemovePropertyChangedEventHandler(AutomationElement element, PropertyChangedEventHandler handler);
         //void RemoveStructureChangedEventHandler(StructureChangedEventHandler handler);
         //SafeArrayToRectNativeArray();
-        //Windows.Foundation.Rect VariantToRect(Object );
+        //Windows.Foundation.Rect VariantToRect(Object variant);
 
         // ====== IUIAutomation2 ======
 
@@ -82,28 +87,28 @@ namespace uia
 
         // ====== IUIAutomation3 ======
 
-        //AddTextEditTextChangedEventHandler();
-        //RemoveTextEditTextChangedEventHandler();
+        //void AddTextEditTextChangedEventHandler(TextEditTextChangedEventHandler handler);
+        //void RemoveTextEditTextChangedEventHandler(TextEditTextChangedEventHandler handler);
 
         // ====== IUIAutomation4 ======
 
-        //AddChangesEventHandler();
-        //RemoveChangesEventHandler();
+        //void AddChangesEventHandler();
+        //void RemoveChangesEventHandler();
 
         // ====== IUIAutomation5 ======
 
-        //AddNotificationEventHandler();
-        //RemoveNotificationEventHandler();
+        //void AddNotificationEventHandler(NotificationEventHandler handler);
+        //void RemoveNotificationEventHandler(NotificationEventHandler handler);
 
          // ====== IUIAutomation6 ======
 
         //CoalesceEvents{ get; set; };
         //ConnectionRecoveryBehavior{ get; set; };
 
-        //AddActiveTextPositionChangedEventHandler();
-        //AddEventHandlerGroup();
+        //void AddActiveTextPositionChangedEventHandler(ActiveTextPositionChangedEventHandler handler);
+        //void AddEventHandlerGroup();
         //CreateEventHandlerGroup();
-        //RemoveActiveTextPositionChangedEventHandler();
-        //RemoveEventHandlerGroup();
+        //void RemoveActiveTextPositionChangedEventHandler(ActiveTextPositionChangedEventHandler handler);
+        //void RemoveEventHandlerGroup();
     }
 }

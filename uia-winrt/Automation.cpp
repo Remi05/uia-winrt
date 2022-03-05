@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "Automation.h"
 #if __has_include("Automation.g.cpp")
 #include "Automation.g.cpp"
@@ -8,6 +8,7 @@
 #include "AutomationCondition.h"
 #include "AutomationElement.h"
 #include "AutomationFocusChangedEventHandler.h"
+#include "AutomationPropertyChangedEventHandler.h"
 #include "AutomationTreeWalker.h"
 #include "EnumHelpers.h"
 #include "VariantHelpers.h"
@@ -81,9 +82,21 @@ namespace winrt::uia::implementation
 		check_hresult(m_uiAutomation->AddFocusChangedEventHandler(uiAutomationCacheRequest.get(), focusChangedHandler.get()));
 	}
 
-	//Automation::AddPropertyChangedEventHandler();
-	//Automation::AddPropertyChangedEventHandlerNativeArray();
-	//Automation::AddStructureChangedEventHandler();
+	//void Automation::AddPropertyChangedEventHandler(uia::AutomationElement const& element, uia::AutomationTreeScope scope, uia::AutomationCacheRequest const& cacheRequest, uia::PropertyChangedEventHandler const& handler)
+	//{
+	//	com_ptr<IUIAutomationElement> uiAutomationElement = winrt::get_self<implementation::AutomationElement>(element)->UiAutomationElement();
+	//	TreeScope treeScope = AutomationTreeScopeToTreeScope(scope);
+	//	com_ptr<IUIAutomationCacheRequest> uiAutomationCacheRequest{ nullptr };
+	//	if (cacheRequest)
+	//	{
+	//		uiAutomationCacheRequest = winrt::get_self<implementation::AutomationCacheRequest>(cacheRequest)->UiAutomationCacheRequest();
+	//	}
+	//	auto propertyChangedHandler = winrt::make<implementation::AutomationPropertyChangedEventHandler>(handler);
+	//	check_hresult(m_uiAutomation->AddPropertyChangedEventHandler(uiAutomationElement.get(), treeScope, uiAutomationCacheRequest.get(), propertyChangedHandler.get()));
+	//}
+
+	//void Automation::AddPropertyChangedEventHandlerNativeArray();
+	//void Automation::AddStructureChangedEventHandler(uia::AutomationCacheRequest const& cacheRequest, uia::StructureChangedEventHandler const& handler);
 
 	//Automation::CheckNotSupported();
 
